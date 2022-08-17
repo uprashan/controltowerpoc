@@ -8,9 +8,12 @@
 		"annotations": [],
 		"type": "Excel",
 		"typeProperties": {
+			"sheetName": "Turnkey20_1000010826_202207261212_ww31.xlsx",
 			"location": {
-				"type": "AzureBlobStorageLocation"
-			}
+				"type": "AzureBlobStorageLocation",
+				"container": "purchaseorders"
+			},
+			"firstRowAsHeader": true
 		},
 		"schema": []
 	}
