@@ -1,0 +1,9 @@
+{
+	"name": "adf-controltower-poc",
+	"location": "westus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "8605bef8-860a-41c1-9de9-3c65fc6d646c",
+		"tenantId": "46c98d88-e344-4ed4-8496-4ed7712e255d"
+	}
+}

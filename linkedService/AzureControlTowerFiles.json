@@ -1,0 +1,17 @@
+{
+	"name": "AzureControlTowerFiles",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "AzureControlTowerFiles",
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"serviceEndpoint": "https://stocontroltower.blob.core.windows.net/",
+			"accountKind": "StorageV2"
+		},
+		"connectVia": {
+			"referenceName": "AutoResolveIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
