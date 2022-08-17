@@ -9,7 +9,7 @@
 		"type": "AzureSqlTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "dbo",
+			"schema": "staging",
 			"table": "t_oct_purchaseorders"
 		}
 	}
