@@ -1,0 +1,7 @@
+{
+	"name": "AzureBlobStorage_ManagedPrivateEndPoint",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/6f233d18-bb37-448d-9517-9d0c140f6217/resourceGroups/rg-controltower-poc/providers/Microsoft.Storage/storageAccounts/stocontroltower",
+		"groupId": "blob"
+	}
+}
