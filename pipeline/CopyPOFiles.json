@@ -20,7 +20,7 @@
 						"type": "ExcelSource",
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
-							"fileListPath": "purchaseorders/Turnkey20_1000010826_202207261212_ww31.xlsx",
+							"fileListPath": "purchaseorders/purchase-order-data-2012-2015-.csv",
 							"enablePartitionDiscovery": false
 						}
 					},
