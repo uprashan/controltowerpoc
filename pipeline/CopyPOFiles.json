@@ -20,7 +20,7 @@
 						"type": "ExcelSource",
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
-							"fileListPath": "purchaseorders/purchase-order-data-2012-2015-.csv",
+							"recursive": true,
 							"enablePartitionDiscovery": false
 						}
 					},

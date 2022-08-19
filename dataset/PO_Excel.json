@@ -8,9 +8,9 @@
 		"annotations": [],
 		"type": "Excel",
 		"typeProperties": {
-			"sheetName": "Turnkey20_1000010826_202207261212_ww31.xlsx",
 			"location": {
 				"type": "AzureBlobStorageLocation",
+				"fileName": "purchase-order-data-2012-2015-.csv",
 				"container": "purchaseorders"
 			},
 			"firstRowAsHeader": true
