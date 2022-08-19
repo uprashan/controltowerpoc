@@ -20,9 +20,7 @@
 						"type": "ExcelSource",
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
-							"recursive": true,
-							"wildcardFolderPath": "*",
-							"wildcardFileName": "*",
+							"fileListPath": "purchaseorders",
 							"enablePartitionDiscovery": false
 						}
 					},
