@@ -81,6 +81,12 @@
 						"enablePartitionDiscovery": false
 					}
 				}
+			},
+			{
+				"name": "ForEach_file_load_table",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": []
 			}
 		],
 		"folder": {
