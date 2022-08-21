@@ -5,11 +5,20 @@
 			"referenceName": "AzureControlTowerFiles",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"FileName": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "Excel",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@dataset().FileName",
+					"type": "Expression"
+				},
 				"container": "purchaseorders"
 			},
 			"firstRowAsHeader": true
