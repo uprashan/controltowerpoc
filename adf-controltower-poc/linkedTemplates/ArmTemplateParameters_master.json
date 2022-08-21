@@ -8,8 +8,23 @@
 		"AzureSqlDatabase1_connectionString": {
 			"value": ""
 		},
+		"AzureSqlDatabase_SystemIdentity_connectionString": {
+			"value": ""
+		},
 		"AzureControlTowerFiles_properties_typeProperties_serviceEndpoint": {
 			"value": "https://stocontroltower.blob.core.windows.net/"
+		},
+		"AzureBlobStorage_ManagedPrivateEndPoint_properties_privateLinkResourceId": {
+			"value": "/subscriptions/6f233d18-bb37-448d-9517-9d0c140f6217/resourceGroups/rg-controltower-poc/providers/Microsoft.Storage/storageAccounts/stocontroltower"
+		},
+		"AzureBlobStorage_ManagedPrivateEndPoint_properties_groupId": {
+			"value": "blob"
+		},
+		"AzureSqlDatabase_ManagedPrivateEndpoint_properties_privateLinkResourceId": {
+			"value": "/subscriptions/6f233d18-bb37-448d-9517-9d0c140f6217/resourceGroups/rg-controltower-poc/providers/Microsoft.Sql/servers/sqldb-controltower-poc"
+		},
+		"AzureSqlDatabase_ManagedPrivateEndpoint_properties_groupId": {
+			"value": "sqlServer"
 		},
 		"containerUri": {
 			"value": ""

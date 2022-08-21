@@ -11,9 +11,29 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase1'"
 		},
+		"AzureSqlDatabase_SystemIdentity_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase_SystemIdentity'"
+		},
 		"AzureControlTowerFiles_properties_typeProperties_serviceEndpoint": {
 			"type": "string",
 			"defaultValue": "https://stocontroltower.blob.core.windows.net/"
+		},
+		"AzureBlobStorage_ManagedPrivateEndPoint_properties_privateLinkResourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/6f233d18-bb37-448d-9517-9d0c140f6217/resourceGroups/rg-controltower-poc/providers/Microsoft.Storage/storageAccounts/stocontroltower"
+		},
+		"AzureBlobStorage_ManagedPrivateEndPoint_properties_groupId": {
+			"type": "string",
+			"defaultValue": "blob"
+		},
+		"AzureSqlDatabase_ManagedPrivateEndpoint_properties_privateLinkResourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/6f233d18-bb37-448d-9517-9d0c140f6217/resourceGroups/rg-controltower-poc/providers/Microsoft.Sql/servers/sqldb-controltower-poc"
+		},
+		"AzureSqlDatabase_ManagedPrivateEndpoint_properties_groupId": {
+			"type": "string",
+			"defaultValue": "sqlServer"
 		}
 	},
 	"variables": {
@@ -28,8 +48,9 @@
 				"description": "CopyPOFiles",
 				"activities": [
 					{
-						"name": "POFiles",
-						"type": "Copy",
+						"name": "Get_File_Names",
+						"description": "Get_File_Names",
+						"type": "GetMetadata",
 						"dependsOn": [],
 						"policy": {
 							"timeout": "7.00:00:00",
@@ -40,46 +61,105 @@
 						},
 						"userProperties": [],
 						"typeProperties": {
-							"source": {
-								"type": "ExcelSource",
-								"storeSettings": {
-									"type": "AzureBlobStorageReadSettings",
-									"recursive": true,
-									"wildcardFileName": "*",
-									"enablePartitionDiscovery": false
-								}
-							},
-							"sink": {
-								"type": "AzureSqlSink",
-								"writeBehavior": "insert",
-								"sqlWriterUseTableLock": false,
-								"tableOption": "autoCreate",
-								"disableMetricsCollection": false
-							},
-							"enableStaging": false,
-							"translator": {
-								"type": "TabularTranslator",
-								"typeConversion": true,
-								"typeConversionSettings": {
-									"allowDataTruncation": true,
-									"treatBooleanAsNumber": false
-								}
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "PO_Excel",
+							"dataset": {
+								"referenceName": "PO_Excel_Metadata",
 								"type": "DatasetReference",
 								"parameters": {}
+							},
+							"fieldList": [
+								"childItems"
+							],
+							"storeSettings": {
+								"type": "AzureBlobStorageReadSettings",
+								"recursive": true,
+								"enablePartitionDiscovery": false
+							}
+						}
+					},
+					{
+						"name": "ForEach_file_load_table",
+						"type": "ForEach",
+						"dependsOn": [
+							{
+								"activity": "Get_File_Names",
+								"dependencyConditions": [
+									"Succeeded"
+								]
 							}
 						],
-						"outputs": [
-							{
-								"referenceName": "AzureSqlTable1",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
+						"userProperties": [],
+						"typeProperties": {
+							"items": {
+								"value": "@activity('Get_File_Names').output.childItems",
+								"type": "Expression"
+							},
+							"activities": [
+								{
+									"name": "POFiles",
+									"type": "Copy",
+									"dependsOn": [],
+									"policy": {
+										"timeout": "7.00:00:00",
+										"retry": 0,
+										"retryIntervalInSeconds": 30,
+										"secureOutput": false,
+										"secureInput": false
+									},
+									"userProperties": [],
+									"typeProperties": {
+										"source": {
+											"type": "ExcelSource",
+											"storeSettings": {
+												"type": "AzureBlobStorageReadSettings",
+												"recursive": true,
+												"modifiedDatetimeStart": "2022-08-19T00:00:00.062Z",
+												"enablePartitionDiscovery": false
+											}
+										},
+										"sink": {
+											"type": "AzureSqlSink",
+											"writeBehavior": "insert",
+											"sqlWriterUseTableLock": false,
+											"tableOption": "autoCreate",
+											"disableMetricsCollection": false
+										},
+										"enableStaging": false,
+										"translator": {
+											"type": "TabularTranslator",
+											"typeConversion": true,
+											"typeConversionSettings": {
+												"allowDataTruncation": true,
+												"treatBooleanAsNumber": false
+											}
+										}
+									},
+									"inputs": [
+										{
+											"referenceName": "PO_Excel_Files",
+											"type": "DatasetReference",
+											"parameters": {
+												"FileName": {
+													"value": "@item().name",
+													"type": "Expression"
+												}
+											}
+										}
+									],
+									"outputs": [
+										{
+											"referenceName": "AzureSqlTable1",
+											"type": "DatasetReference",
+											"parameters": {
+												"File_Table_Name": {
+													"value": "@item().name",
+													"type": "Expression"
+												}
+											}
+										}
+									]
+								}
+							]
+						}
 					}
 				],
 				"policy": {
@@ -92,7 +172,8 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/PO_Excel')]",
+				"[concat(variables('factoryId'), '/datasets/PO_Excel_Metadata')]",
+				"[concat(variables('factoryId'), '/datasets/PO_Excel_Files')]",
 				"[concat(variables('factoryId'), '/datasets/AzureSqlTable1')]"
 			]
 		},
@@ -105,12 +186,20 @@
 					"referenceName": "AzureSqlDatabase1",
 					"type": "LinkedServiceReference"
 				},
+				"parameters": {
+					"File_Table_Name": {
+						"type": "string"
+					}
+				},
 				"annotations": [],
 				"type": "AzureSqlTable",
 				"schema": [],
 				"typeProperties": {
-					"schema": "staging",
-					"table": "t_oct_purchaseorders"
+					"schema": "dbo",
+					"table": {
+						"value": "@dataset().File_Table_Name",
+						"type": "Expression"
+					}
 				}
 			},
 			"dependsOn": [
@@ -118,7 +207,44 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/PO_Excel')]",
+			"name": "[concat(parameters('factoryName'), '/PO_Excel_Files')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureControlTowerFiles",
+					"type": "LinkedServiceReference"
+				},
+				"parameters": {
+					"FileName": {
+						"type": "string"
+					}
+				},
+				"annotations": [],
+				"type": "Excel",
+				"typeProperties": {
+					"sheetName": {
+						"value": "Sheet 1",
+						"type": "Expression"
+					},
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": {
+							"value": "@dataset().FileName",
+							"type": "Expression"
+						},
+						"container": "purchaseorders"
+					},
+					"firstRowAsHeader": true
+				},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureControlTowerFiles')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/PO_Excel_Metadata')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -129,12 +255,12 @@
 				"annotations": [],
 				"type": "Excel",
 				"typeProperties": {
-					"sheetName": "Turnkey20_1000010826_202207261212_ww31.xlsx",
 					"location": {
 						"type": "AzureBlobStorageLocation",
 						"container": "purchaseorders"
 					},
-					"firstRowAsHeader": true
+					"sheetIndex": 0,
+					"firstRowAsHeader": false
 				},
 				"schema": []
 			},
@@ -186,6 +312,28 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlDatabase_SystemIdentity')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureSqlDatabase_SystemIdentity_connectionString')]",
+					"alwaysEncryptedSettings": {
+						"alwaysEncryptedAkvAuthType": "ManagedIdentity"
+					}
+				},
+				"connectVia": {
+					"referenceName": "AutoResolveIntegrationRuntime",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/AutoResolveIntegrationRuntime')]",
 			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
 			"apiVersion": "2018-06-01",
@@ -220,6 +368,30 @@
 			"apiVersion": "2018-06-01",
 			"properties": {},
 			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/default/AzureBlobStorage_ManagedPrivateEndPoint')]",
+			"type": "Microsoft.DataFactory/factories/managedVirtualNetworks/managedPrivateEndpoints",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"privateLinkResourceId": "[parameters('AzureBlobStorage_ManagedPrivateEndPoint_properties_privateLinkResourceId')]",
+				"groupId": "[parameters('AzureBlobStorage_ManagedPrivateEndPoint_properties_groupId')]"
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/managedVirtualNetworks/default')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/default/AzureSqlDatabase_ManagedPrivateEndpoint')]",
+			"type": "Microsoft.DataFactory/factories/managedVirtualNetworks/managedPrivateEndpoints",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"privateLinkResourceId": "[parameters('AzureSqlDatabase_ManagedPrivateEndpoint_properties_privateLinkResourceId')]",
+				"groupId": "[parameters('AzureSqlDatabase_ManagedPrivateEndpoint_properties_groupId')]"
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/managedVirtualNetworks/default')]"
+			]
 		}
 	]
 }

@@ -11,9 +11,29 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase1'"
 		},
+		"AzureSqlDatabase_SystemIdentity_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase_SystemIdentity'"
+		},
 		"AzureControlTowerFiles_properties_typeProperties_serviceEndpoint": {
 			"type": "string",
 			"defaultValue": "https://stocontroltower.blob.core.windows.net/"
+		},
+		"AzureBlobStorage_ManagedPrivateEndPoint_properties_privateLinkResourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/6f233d18-bb37-448d-9517-9d0c140f6217/resourceGroups/rg-controltower-poc/providers/Microsoft.Storage/storageAccounts/stocontroltower"
+		},
+		"AzureBlobStorage_ManagedPrivateEndPoint_properties_groupId": {
+			"type": "string",
+			"defaultValue": "blob"
+		},
+		"AzureSqlDatabase_ManagedPrivateEndpoint_properties_privateLinkResourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/6f233d18-bb37-448d-9517-9d0c140f6217/resourceGroups/rg-controltower-poc/providers/Microsoft.Sql/servers/sqldb-controltower-poc"
+		},
+		"AzureSqlDatabase_ManagedPrivateEndpoint_properties_groupId": {
+			"type": "string",
+			"defaultValue": "sqlServer"
 		},
 		"containerUri": {
 			"type": "string",
@@ -44,6 +64,21 @@
 					},
 					"AzureSqlDatabase1_connectionString": {
 						"value": "[parameters('AzureSqlDatabase1_connectionString')]"
+					},
+					"AzureSqlDatabase_SystemIdentity_connectionString": {
+						"value": "[parameters('AzureSqlDatabase_SystemIdentity_connectionString')]"
+					},
+					"AzureBlobStorage_ManagedPrivateEndPoint_properties_privateLinkResourceId": {
+						"value": "[parameters('AzureBlobStorage_ManagedPrivateEndPoint_properties_privateLinkResourceId')]"
+					},
+					"AzureBlobStorage_ManagedPrivateEndPoint_properties_groupId": {
+						"value": "[parameters('AzureBlobStorage_ManagedPrivateEndPoint_properties_groupId')]"
+					},
+					"AzureSqlDatabase_ManagedPrivateEndpoint_properties_privateLinkResourceId": {
+						"value": "[parameters('AzureSqlDatabase_ManagedPrivateEndpoint_properties_privateLinkResourceId')]"
+					},
+					"AzureSqlDatabase_ManagedPrivateEndpoint_properties_groupId": {
+						"value": "[parameters('AzureSqlDatabase_ManagedPrivateEndpoint_properties_groupId')]"
 					},
 					"AzureControlTowerFiles_properties_typeProperties_serviceEndpoint": {
 						"value": "[parameters('AzureControlTowerFiles_properties_typeProperties_serviceEndpoint')]"
