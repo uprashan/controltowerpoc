@@ -12,6 +12,7 @@
 				"type": "AzureBlobStorageLocation",
 				"container": "purchaseorders"
 			},
+			"sheetIndex": 0,
 			"firstRowAsHeader": false
 		},
 		"schema": []
