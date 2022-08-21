@@ -13,6 +13,7 @@
 		"annotations": [],
 		"type": "Excel",
 		"typeProperties": {
+			"sheetName": "Sheet 1",
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": {
@@ -21,7 +22,6 @@
 				},
 				"container": "purchaseorders"
 			},
-			"sheetIndex": 0,
 			"firstRowAsHeader": true
 		},
 		"schema": []
