@@ -105,7 +105,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"File_Table_Name": {
-											"value": "@item().FileName",
+											"value": "@item().name",
 											"type": "Expression"
 										}
 									}
