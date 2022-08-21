@@ -15,14 +15,9 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": {
-					"value": "@dataset().FileName",
-					"type": "Expression"
-				},
 				"container": "purchaseorders"
 			},
-			"sheetIndex": 0,
-			"firstRowAsHeader": true
+			"firstRowAsHeader": false
 		},
 		"schema": []
 	}
