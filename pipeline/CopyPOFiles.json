@@ -85,8 +85,21 @@
 			{
 				"name": "ForEach_file_load_table",
 				"type": "ForEach",
-				"dependsOn": [],
-				"userProperties": []
+				"dependsOn": [
+					{
+						"activity": "Get_File_Names",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('Get_File_Names').output.childItems",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"folder": {
