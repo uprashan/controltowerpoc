@@ -102,7 +102,13 @@
 							"outputs": [
 								{
 									"referenceName": "AzureSqlTable1",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"File_Table_Name": {
+											"value": "@item().FileName",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						}
