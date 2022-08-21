@@ -89,7 +89,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "PO_Excel_Metadata",
+									"referenceName": "PO_Excel_Files",
 									"type": "DatasetReference"
 								}
 							],
