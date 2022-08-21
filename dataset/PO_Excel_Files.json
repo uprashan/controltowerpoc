@@ -1,14 +1,9 @@
 {
-	"name": "PO_Excel_Metadata",
+	"name": "PO_Excel_Files",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureControlTowerFiles",
 			"type": "LinkedServiceReference"
-		},
-		"parameters": {
-			"FileName": {
-				"type": "string"
-			}
 		},
 		"annotations": [],
 		"type": "Excel",
@@ -17,7 +12,7 @@
 				"type": "AzureBlobStorageLocation",
 				"container": "purchaseorders"
 			},
-			"firstRowAsHeader": false
+			"firstRowAsHeader": true
 		},
 		"schema": []
 	}

@@ -18,7 +18,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "PO_Excel",
+						"referenceName": "PO_Excel_Metadata",
 						"type": "DatasetReference"
 					},
 					"fieldList": [
@@ -89,14 +89,8 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "PO_Excel",
-									"type": "DatasetReference",
-									"parameters": {
-										"FileName": {
-											"value": "@item().FileName",
-											"type": "Expression"
-										}
-									}
+									"referenceName": "PO_Excel_Metadata",
+									"type": "DatasetReference"
 								}
 							],
 							"outputs": [
