@@ -90,7 +90,13 @@
 							"inputs": [
 								{
 									"referenceName": "PO_Excel",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"FileName": {
+											"value": "@item().FileName",
+											"type": "Expression"
+										}
+									}
 								}
 							],
 							"outputs": [
