@@ -24,7 +24,8 @@
 					"headers": {
 						"KEY": "Content-Type",
 						"VALUE": "application/json"
-					}
+					},
+					"body": "@concat('{','}'"
 				}
 			}
 		],
