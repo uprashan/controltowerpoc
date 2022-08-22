@@ -20,7 +20,7 @@
 						"referenceName": "AutoResolveIntegrationRuntime",
 						"type": "IntegrationRuntimeReference"
 					},
-					"method": "POST"
+					"method": "GET"
 				}
 			}
 		],
