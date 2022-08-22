@@ -1,6 +1,29 @@
 {
 	"name": "pl_copy_spsite_storage",
 	"properties": {
+		"activities": [
+			{
+				"name": "call_logic_app_copy_sp_storage",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://prod-18.westus2.logic.azure.com:443/workflows/7d1ace0d64974cdc98ba99ec72cb5e03",
+					"connectVia": {
+						"referenceName": "AutoResolveIntegrationRuntime",
+						"type": "IntegrationRuntimeReference"
+					},
+					"method": "POST"
+				}
+			}
+		],
 		"folder": {
 			"name": "ControlTower"
 		},
