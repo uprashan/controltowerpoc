@@ -1,0 +1,9 @@
+{
+	"name": "pl_copy_spsite_storage",
+	"properties": {
+		"folder": {
+			"name": "ControlTower"
+		},
+		"annotations": []
+	}
+}
