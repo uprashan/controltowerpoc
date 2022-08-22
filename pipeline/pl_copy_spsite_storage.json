@@ -20,7 +20,11 @@
 						"referenceName": "AutoResolveIntegrationRuntime",
 						"type": "IntegrationRuntimeReference"
 					},
-					"method": "GET"
+					"method": "POST",
+					"headers": {
+						"KEY": "Content-Type",
+						"VALUE": "application/json"
+					}
 				}
 			}
 		],
