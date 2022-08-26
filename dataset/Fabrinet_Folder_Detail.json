@@ -1,0 +1,18 @@
+{
+	"name": "Fabrinet_Folder_Detail",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureControlTowerFiles",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "fabrinet"
+			}
+		},
+		"schema": []
+	}
+}

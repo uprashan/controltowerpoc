@@ -18,7 +18,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "PO_Excel_Metadata",
+						"referenceName": "Fabrinet_Folder_Detail",
 						"type": "DatasetReference"
 					},
 					"fieldList": [
