@@ -1,0 +1,167 @@
+{
+	"name": "AzureSqlTable_Merge_PO",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase_SystemIdentity",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "REPORT_DATE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Subcon ID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Subcon Site",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CUSTOMER",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SUPPLIER",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PRODUCT_NAME",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ITEM_NUMBER",
+				"type": "nvarchar"
+			},
+			{
+				"name": "STD_COST",
+				"type": "nvarchar"
+			},
+			{
+				"name": "MFG",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ITEM_DESCRIPTION",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PO_CREATION_DATE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LINE_NUMBER",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SHIPMENT_NUM",
+				"type": "nvarchar"
+			},
+			{
+				"name": "QUANTITY",
+				"type": "nvarchar"
+			},
+			{
+				"name": "QTY_RECEIVED",
+				"type": "nvarchar"
+			},
+			{
+				"name": "In receiving Qty",
+				"type": "nvarchar"
+			},
+			{
+				"name": "REMAINING_QTY",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ETD_DATE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PROMISED_DATE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LEAD_TIME",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TRANSIT_LEAD_TIME",
+				"type": "nvarchar"
+			},
+			{
+				"name": "POSTPROCESSING_LEAD_TIME",
+				"type": "nvarchar"
+			},
+			{
+				"name": "NCNR",
+				"type": "nvarchar"
+			},
+			{
+				"name": "MOQ",
+				"type": "nvarchar"
+			},
+			{
+				"name": "FIXED_LOT_MULTIPLIER",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PO_NUMBER",
+				"type": "nvarchar"
+			},
+			{
+				"name": "RELEASE_NUM",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Recommend ETD Date",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PO_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "MANUFACTURER",
+				"type": "nvarchar"
+			},
+			{
+				"name": "MFG_PART",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CRITICAL_SHORTAGE_FLAG",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DISTI_INDICATOR",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SUPPLIER_ADDRESS",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PROMISED_QUANTITY",
+				"type": "nvarchar"
+			},
+			{
+				"name": "FILE_NAME",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CREATE_DATETIME",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "tbl_Fabrinet_purchaseorder"
+		}
+	}
+}

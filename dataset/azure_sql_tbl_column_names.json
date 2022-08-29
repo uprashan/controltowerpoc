@@ -1,0 +1,12 @@
+{
+	"name": "azure_sql_tbl_column_names",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase_SystemIdentity",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	}
+}
