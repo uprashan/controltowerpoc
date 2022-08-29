@@ -13,10 +13,6 @@
 		"annotations": [],
 		"type": "Excel",
 		"typeProperties": {
-			"sheetName": {
-				"value": "Sheet 1",
-				"type": "Expression"
-			},
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": {
@@ -24,6 +20,10 @@
 					"type": "Expression"
 				},
 				"container": "purchaseorders"
+			},
+			"sheetIndex": {
+				"value": "0",
+				"type": "Expression"
 			},
 			"firstRowAsHeader": true
 		},
