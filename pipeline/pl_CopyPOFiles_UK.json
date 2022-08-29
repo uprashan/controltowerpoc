@@ -64,6 +64,22 @@
 							"typeProperties": {
 								"source": {
 									"type": "ExcelSource",
+									"additionalColumns": [
+										{
+											"name": "Filename",
+											"value": {
+												"value": "@item().name",
+												"type": "Expression"
+											}
+										},
+										{
+											"name": "CreateDate",
+											"value": {
+												"value": "@utcnow()",
+												"type": "Expression"
+											}
+										}
+									],
 									"storeSettings": {
 										"type": "AzureBlobStorageReadSettings",
 										"recursive": true,
