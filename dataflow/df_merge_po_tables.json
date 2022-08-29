@@ -1,0 +1,18 @@
+{
+	"name": "df_merge_po_tables",
+	"properties": {
+		"description": "df_merge_po_tables",
+		"folder": {
+			"name": "Control_Tower"
+		},
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [],
+			"sinks": [],
+			"transformations": [],
+			"scriptLines": [
+				""
+			]
+		}
+	}
+}
