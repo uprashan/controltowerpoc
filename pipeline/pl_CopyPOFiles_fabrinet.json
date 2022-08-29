@@ -32,29 +32,18 @@
 				}
 			},
 			{
-				"name": "ForEach_file_load_table",
+				"name": "ForEach1",
 				"type": "ForEach",
-				"dependsOn": [
-					{
-						"activity": "Get_File_Names",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
-					"items": {
-						"value": "@activity('Get_File_Names').output.childItems",
-						"type": "Expression"
-					},
 					"activities": [
 						{
-							"name": "POFiles",
+							"name": "Copy data1",
 							"type": "Copy",
 							"dependsOn": [],
 							"policy": {
-								"timeout": "7.00:00:00",
+								"timeout": "0.12:00:00",
 								"retry": 0,
 								"retryIntervalInSeconds": 30,
 								"secureOutput": false,
@@ -73,9 +62,7 @@
 								"sink": {
 									"type": "AzureSqlSink",
 									"writeBehavior": "insert",
-									"sqlWriterUseTableLock": true,
-									"tableOption": "autoCreate",
-									"disableMetricsCollection": false
+									"sqlWriterUseTableLock": false
 								},
 								"enableStaging": false,
 								"translator": {
@@ -89,26 +76,14 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "PO_Excel_Files",
-									"type": "DatasetReference",
-									"parameters": {
-										"FileName": {
-											"value": "@item().name",
-											"type": "Expression"
-										}
-									}
+									"referenceName": "Fabrinet_Folder_Detail",
+									"type": "DatasetReference"
 								}
 							],
 							"outputs": [
 								{
 									"referenceName": "AzureSqlTable1",
-									"type": "DatasetReference",
-									"parameters": {
-										"File_Table_Name": {
-											"value": "@item().name",
-											"type": "Expression"
-										}
-									}
+									"type": "DatasetReference"
 								}
 							]
 						}
