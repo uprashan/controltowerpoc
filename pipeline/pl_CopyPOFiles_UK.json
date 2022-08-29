@@ -66,14 +66,14 @@
 									"type": "ExcelSource",
 									"additionalColumns": [
 										{
-											"name": "Filename",
+											"name": "File_name",
 											"value": {
 												"value": "@item().name",
 												"type": "Expression"
 											}
 										},
 										{
-											"name": "CreateDate",
+											"name": "Create_Date",
 											"value": {
 												"value": "@utcnow()",
 												"type": "Expression"
