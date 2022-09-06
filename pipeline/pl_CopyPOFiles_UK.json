@@ -116,7 +116,7 @@
 				}
 			},
 			{
-				"name": "sp_sql_transform",
+				"name": "sp_sql_mergefiles",
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [
 					{
