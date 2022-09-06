@@ -116,8 +116,8 @@
 				}
 			},
 			{
-				"name": "Lookup1",
-				"type": "Lookup",
+				"name": "sp_sql_transform",
+				"type": "SqlServerStoredProcedure",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
@@ -126,7 +126,11 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": []
+				"userProperties": [],
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase_MSFTSupport_SystemUserAcc",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
 		"folder": {
