@@ -111,37 +111,6 @@
 									}
 								}
 							]
-						},
-						{
-							"name": "get_sql_table_columns",
-							"type": "GetMetadata",
-							"dependsOn": [
-								{
-									"activity": "POFiles",
-									"dependencyConditions": [
-										"Succeeded"
-									]
-								}
-							],
-							"policy": {
-								"timeout": "0.12:00:00",
-								"retry": 0,
-								"retryIntervalInSeconds": 30,
-								"secureOutput": false,
-								"secureInput": false
-							},
-							"typeProperties": {
-								"dataset": {
-									"referenceName": "azure_sql_tbl_column_names",
-									"type": "DatasetReference"
-								},
-								"fieldList": [
-									{
-										"value": "@item()",
-										"type": "Expression"
-									}
-								]
-							}
 						}
 					]
 				}
