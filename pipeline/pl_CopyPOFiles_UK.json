@@ -117,6 +117,7 @@
 			},
 			{
 				"name": "sp_sql_mergefiles",
+				"description": "/****** Object:  StoredProcedure [dbo].[sp_fabrinet_tbl_load]    Script Date: 9/6/2022 11:50:31 AM ******/\n/* STORED PROCEDURE TO MERGE FILES INTO SINGLE TABLE*/",
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [
 					{
