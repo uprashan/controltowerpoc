@@ -135,6 +135,9 @@
 					"secureInput": false
 				},
 				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[sp_fabrinet_tbl_load]"
+				},
 				"linkedServiceName": {
 					"referenceName": "AzureSqlDatabase_MSFTSupport_SystemUserAcc",
 					"type": "LinkedServiceReference"
