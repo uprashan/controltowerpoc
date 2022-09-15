@@ -13,7 +13,7 @@
 						"referenceName": "PO_Excel_Files",
 						"type": "DatasetReference"
 					},
-					"name": "source1"
+					"name": "opstream"
 				}
 			],
 			"sinks": [],
@@ -29,7 +29,7 @@
 				"     dateFormats: ['MM-dd-yyyy'],",
 				"     timestampFormats: ['yyyy-MM-dd\\'T\\'HH:mm:ss'],",
 				"     preferredIntegralType: 'integer',",
-				"     preferredFractionalType: 'double') ~> source1"
+				"     preferredFractionalType: 'double') ~> opstream"
 			]
 		}
 	}
