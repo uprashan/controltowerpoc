@@ -1,0 +1,21 @@
+{
+	"name": "BY_DMS_Sftp1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "BY_DMS_Sftp1",
+		"annotations": [],
+		"type": "Sftp",
+		"typeProperties": {
+			"host": "PRODB2BGWNA1.jdadelivers.com",
+			"port": 22,
+			"skipHostKeyValidation": true,
+			"authenticationType": "Basic",
+			"userName": "intdmseusdevv2",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQEUzMzA3NTY0LUJEQjItNDAyNy1BODNGLUM0QzI1MUJEM0NEOV85YzAwMjQ4Zi1lZjU3LTQ5Y2UtYWJlMi00NDI0ZjBhNTBkMmUiDQp9"
+		},
+		"connectVia": {
+			"referenceName": "AutoResolveIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
