@@ -25,7 +25,11 @@
 				"     ignoreNoFilesFound: false,",
 				"     enableCdc: true,",
 				"     mode: 'read',",
-				"     skipInitialLoad: false) ~> source1"
+				"     skipInitialLoad: false,",
+				"     dateFormats: ['MM-dd-yyyy'],",
+				"     timestampFormats: ['yyyy-MM-dd\\'T\\'HH:mm:ss'],",
+				"     preferredIntegralType: 'integer',",
+				"     preferredFractionalType: 'double') ~> source1"
 			]
 		}
 	}
