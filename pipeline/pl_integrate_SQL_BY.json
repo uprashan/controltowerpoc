@@ -1,0 +1,10 @@
+{
+	"name": "pl_integrate_SQL_BY",
+	"properties": {
+		"description": "pl_integrate_SQL_BY",
+		"folder": {
+			"name": "ControlTower"
+		},
+		"annotations": []
+	}
+}
