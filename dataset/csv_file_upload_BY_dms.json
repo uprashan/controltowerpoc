@@ -1,0 +1,23 @@
+{
+	"name": "csv_file_upload_BY_dms",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureControlTowerFiles",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Turnkey20_1000010826_202208260230_ww35 - BYDMS.csv",
+				"container": "purchaseoderssink"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}

@@ -1,0 +1,21 @@
+{
+	"name": "sftp_by_dms",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "BY_DMS_Sftp1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "SftpLocation"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}

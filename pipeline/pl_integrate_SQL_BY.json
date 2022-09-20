@@ -4,7 +4,8 @@
 		"description": "pl_integrate_SQL_BY",
 		"activities": [
 			{
-				"name": "Copy data1",
+				"name": "Copy CSV storage to BY DMS",
+				"description": "Copy CSV storage to BY DMS",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -16,8 +17,44 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "SftpWriteSettings",
+							"operationTimeout": "01:00:00",
+							"useTempFileRename": true
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
 					"enableStaging": false
-				}
+				},
+				"inputs": [
+					{
+						"referenceName": "csv_file_upload_BY_dms",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "sftp_by_dms",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"folder": {
