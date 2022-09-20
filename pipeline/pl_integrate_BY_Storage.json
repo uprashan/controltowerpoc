@@ -22,6 +22,7 @@
 						"storeSettings": {
 							"type": "SftpReadSettings",
 							"recursive": true,
+							"wildcardFolderPath": "*",
 							"wildcardFileName": "*",
 							"enablePartitionDiscovery": false,
 							"disableChunking": false
