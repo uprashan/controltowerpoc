@@ -1,0 +1,20 @@
+{
+	"name": "BY_DMS_sftp_storage_account",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "BY_DMS_Sftp1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "SftpLocation"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}

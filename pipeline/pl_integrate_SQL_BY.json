@@ -55,6 +55,41 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "Copy BY DMS Files to Storage",
+				"description": "Copy BY DMS Files to Storage",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "SftpReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false,
+							"disableChunking": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "BY_DMS_sftp_storage_account",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"folder": {
