@@ -21,7 +21,7 @@
 						"type": "DelimitedTextSource",
 						"storeSettings": {
 							"type": "SftpReadSettings",
-							"fileListPath": "outbox",
+							"recursive": true,
 							"enablePartitionDiscovery": false,
 							"disableChunking": false
 						},
