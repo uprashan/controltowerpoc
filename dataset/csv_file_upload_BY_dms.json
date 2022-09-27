@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "Turnkey20_1000010826_202208260230_ww35 - BYDMS.csv",
+				"fileName": "*",
 				"container": "purchaseoderssink"
 			},
 			"columnDelimiter": ",",
