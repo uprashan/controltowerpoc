@@ -1,5 +1,5 @@
 {
-	"name": "pl_integrate_BY_Storage",
+	"name": "pl_integrate_BY_DMS_to_Azure_Storage",
 	"properties": {
 		"description": "pl_integrate_BY_Storage",
 		"activities": [

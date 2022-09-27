@@ -1,5 +1,5 @@
 {
-	"name": "pl_integrate_SQL_BY",
+	"name": "pl_integrate_Azure_ADLS_to_BY_DMS",
 	"properties": {
 		"description": "pl_integrate_SQL_BY",
 		"activities": [
