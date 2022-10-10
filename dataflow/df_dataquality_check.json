@@ -146,6 +146,7 @@
 				"     input(",
 				"          Column_1 as string",
 				"     ),",
+				"     filePattern:'fabrinet_WW31',",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> sink1storagepurchaseorders"
 			]
