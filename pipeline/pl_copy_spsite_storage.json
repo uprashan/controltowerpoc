@@ -25,7 +25,10 @@
 						"KEY": "Content-Type",
 						"VALUE": "application/json"
 					},
-					"body": "@concat('{','}'"
+					"body": {
+						"value": "@concat('{','}'",
+						"type": "Expression"
+					}
 				}
 			}
 		],
