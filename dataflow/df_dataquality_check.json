@@ -14,10 +14,21 @@
 						"type": "LinkedServiceReference"
 					},
 					"name": "opstreamdqfile"
+				},
+				{
+					"linkedService": {
+						"referenceName": "AzureSqlDatabase1",
+						"type": "LinkedServiceReference"
+					},
+					"name": "outputsqlintelmodel"
 				}
 			],
 			"sinks": [],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "lookup1"
+				}
+			],
 			"scriptLines": [
 				"source(output(",
 				"          REPORT_DATE as string,",
@@ -71,7 +82,57 @@
 				"     dateFormats: ['MM-dd-yyyy'],",
 				"     timestampFormats: ['yyyy-MM-dd\\'T\\'HH:mm:ss'],",
 				"     preferredIntegralType: 'integer',",
-				"     preferredFractionalType: 'double') ~> opstreamdqfile"
+				"     preferredFractionalType: 'double') ~> opstreamdqfile",
+				"source(output(",
+				"          REPORT_DATE as string,",
+				"          {Subcon ID} as string,",
+				"          {Subcon Site} as string,",
+				"          CUSTOMER as string,",
+				"          SUPPLIER as string,",
+				"          PRODUCT_NAME as string,",
+				"          ITEM_NUMBER as string,",
+				"          STD_COST as string,",
+				"          MFG as string,",
+				"          ITEM_DESCRIPTION as string,",
+				"          PO_CREATION_DATE as string,",
+				"          LINE_NUMBER as string,",
+				"          SHIPMENT_NUM as string,",
+				"          QUANTITY as string,",
+				"          QTY_RECEIVED as string,",
+				"          {In receiving Qty} as string,",
+				"          REMAINING_QTY as string,",
+				"          ETD_DATE as string,",
+				"          PROMISED_DATE as string,",
+				"          LEAD_TIME as string,",
+				"          TRANSIT_LEAD_TIME as string,",
+				"          POSTPROCESSING_LEAD_TIME as string,",
+				"          NCNR as string,",
+				"          MOQ as string,",
+				"          FIXED_LOT_MULTIPLIER as string,",
+				"          PO_NUMBER as string,",
+				"          RELEASE_NUM as string,",
+				"          {Recommend ETD Date} as string,",
+				"          PO_TYPE as string,",
+				"          MANUFACTURER as string,",
+				"          MFG_PART as string,",
+				"          CRITICAL_SHORTAGE_FLAG as string,",
+				"          DISTI_INDICATOR as string,",
+				"          SUPPLIER_ADDRESS as string,",
+				"          PROMISED_QUANTITY as string,",
+				"          FILE_NAME as string,",
+				"          CREATE_DATETIME as timestamp",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     limit: 100,",
+				"     format: 'query',",
+				"     store: 'sqlserver',",
+				"     query: '/****** Script for SelectTopNRows command from SSMS  ******/\\nSELECT TOP (1000) [REPORT_DATE]\\n      ,[Subcon ID]\\n      ,[Subcon Site]\\n      ,[CUSTOMER]\\n      ,[SUPPLIER]\\n      ,[PRODUCT_NAME]\\n      ,[ITEM_NUMBER]\\n      ,[STD_COST]\\n      ,[MFG]\\n      ,[ITEM_DESCRIPTION]\\n      ,[PO_CREATION_DATE]\\n      ,[LINE_NUMBER]\\n      ,[SHIPMENT_NUM]\\n      ,[QUANTITY]\\n      ,[QTY_RECEIVED]\\n      ,[In receiving Qty]\\n      ,[REMAINING_QTY]\\n      ,[ETD_DATE]\\n      ,[PROMISED_DATE]\\n      ,[LEAD_TIME]\\n      ,[TRANSIT_LEAD_TIME]\\n      ,[POSTPROCESSING_LEAD_TIME]\\n      ,[NCNR]\\n      ,[MOQ]\\n      ,[FIXED_LOT_MULTIPLIER]\\n      ,[PO_NUMBER]\\n      ,[RELEASE_NUM]\\n      ,[Recommend ETD Date]\\n      ,[PO_TYPE]\\n      ,[MANUFACTURER]\\n      ,[MFG_PART]\\n      ,[CRITICAL_SHORTAGE_FLAG]\\n      ,[DISTI_INDICATOR]\\n      ,[SUPPLIER_ADDRESS]\\n      ,[PROMISED_QUANTITY]\\n      ,[FILE_NAME]\\n      ,[CREATE_DATETIME]\\n  FROM [dbo].[tbl_Fabrinet_purchaseorder]',",
+				"     isolationLevel: 'READ_UNCOMMITTED') ~> outputsqlintelmodel",
+				"opstreamdqfile, outputsqlintelmodel lookup(opstreamdqfile@REPORT_DATE == ERROR_FUNCTION('')",
+				"     && opstreamdqfile@{Subcon ID} == ERROR_FUNCTION(''),",
+				"     multiple: true,",
+				"     broadcast: 'auto')~> lookup1"
 			]
 		}
 	}
