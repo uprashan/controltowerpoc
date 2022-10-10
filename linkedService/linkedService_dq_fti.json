@@ -1,0 +1,16 @@
+{
+	"name": "linkedService_dq_fti",
+	"properties": {
+		"description": "linkedService_dq_fti",
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"serviceEndpoint": "https://stocontroltower.blob.core.windows.net/",
+			"accountKind": "StorageV2"
+		},
+		"connectVia": {
+			"referenceName": "AutoResolveIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
