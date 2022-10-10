@@ -16,7 +16,11 @@
 					"name": "opstreamdqfile"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"name": "sink1"
+				}
+			],
 			"transformations": [],
 			"scriptLines": [
 				"source(output(",
@@ -71,7 +75,11 @@
 				"     dateFormats: ['MM-dd-yyyy'],",
 				"     timestampFormats: ['yyyy-MM-dd\\'T\\'HH:mm:ss'],",
 				"     preferredIntegralType: 'integer',",
-				"     preferredFractionalType: 'double') ~> opstreamdqfile"
+				"     preferredFractionalType: 'double') ~> opstreamdqfile",
+				"opstreamdqfile sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink1"
 			]
 		}
 	}
