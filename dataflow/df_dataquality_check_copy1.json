@@ -1,0 +1,161 @@
+{
+	"name": "df_dataquality_check_copy1",
+	"properties": {
+		"description": "df_merge_po_tables",
+		"folder": {
+			"name": "Control_Tower"
+		},
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"linkedService": {
+						"referenceName": "linkedService_dq_fti",
+						"type": "LinkedServiceReference"
+					},
+					"name": "opstreamdqfile"
+				},
+				{
+					"linkedService": {
+						"referenceName": "AzureSqlDatabase1",
+						"type": "LinkedServiceReference"
+					},
+					"name": "outputsqlintelmodel"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "sinkapprovedpofiles",
+						"type": "DatasetReference"
+					},
+					"name": "sink1storagepurchaseorders"
+				}
+			],
+			"transformations": [
+				{
+					"name": "lookup1"
+				},
+				{
+					"name": "exists1"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          REPORT_DATE as string,",
+				"          {Subcon ID} as integer,",
+				"          {Subcon Site} as string,",
+				"          CUSTOMER as string,",
+				"          SUPPLIER as string,",
+				"          PRODUCT_NAME as string,",
+				"          ITEM_NUMBER as string,",
+				"          STD_COST as double,",
+				"          MFG as string,",
+				"          ITEM_DESCRIPTION as string,",
+				"          PO_CREATION_DATE as string,",
+				"          LINE_NUMBER as short,",
+				"          SHIPMENT_NUM as short,",
+				"          QUANTITY as integer,",
+				"          QTY_RECEIVED as short,",
+				"          {In receiving Qty} as string,",
+				"          REMAINING_QTY as integer,",
+				"          ETD_DATE as string,",
+				"          PROMISED_DATE as string,",
+				"          LEAD_TIME as short,",
+				"          TRANSIT_LEAD_TIME as short,",
+				"          POSTPROCESSING_LEAD_TIME as short,",
+				"          NCNR as boolean,",
+				"          MOQ as integer,",
+				"          FIXED_LOT_MULTIPLIER as short,",
+				"          PO_NUMBER as long,",
+				"          RELEASE_NUM as string,",
+				"          {Recommend ETD Date} as string,",
+				"          PO_TYPE as string,",
+				"          MANUFACTURER as string,",
+				"          MFG_PART as string,",
+				"          CRITICAL_SHORTAGE_FLAG as string,",
+				"          DISTI_INDICATOR as string,",
+				"          SUPPLIER_ADDRESS as string,",
+				"          PROMISED_QUANTITY as integer",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: true,",
+				"     inferDriftedColumnTypes: true,",
+				"     limit: 100,",
+				"     ignoreNoFilesFound: false,",
+				"     enableCdc: true,",
+				"     mode: 'read',",
+				"     skipInitialLoad: false,",
+				"     format: 'excel',",
+				"     fileSystem: 'faulttolerant-ingestion',",
+				"     sheetIndex: 0,",
+				"     firstRowAsHeader: true,",
+				"     dateFormats: ['MM-dd-yyyy'],",
+				"     timestampFormats: ['yyyy-MM-dd\\'T\\'HH:mm:ss'],",
+				"     preferredIntegralType: 'integer',",
+				"     preferredFractionalType: 'double') ~> opstreamdqfile",
+				"source(output(",
+				"          REPORT_DATE as string,",
+				"          {Subcon ID} as string,",
+				"          {Subcon Site} as string,",
+				"          CUSTOMER as string,",
+				"          SUPPLIER as string,",
+				"          PRODUCT_NAME as string,",
+				"          ITEM_NUMBER as string,",
+				"          STD_COST as string,",
+				"          MFG as string,",
+				"          ITEM_DESCRIPTION as string,",
+				"          PO_CREATION_DATE as string,",
+				"          LINE_NUMBER as string,",
+				"          SHIPMENT_NUM as string,",
+				"          QUANTITY as string,",
+				"          QTY_RECEIVED as string,",
+				"          {In receiving Qty} as string,",
+				"          REMAINING_QTY as string,",
+				"          ETD_DATE as string,",
+				"          PROMISED_DATE as string,",
+				"          LEAD_TIME as string,",
+				"          TRANSIT_LEAD_TIME as string,",
+				"          POSTPROCESSING_LEAD_TIME as string,",
+				"          NCNR as string,",
+				"          MOQ as string,",
+				"          FIXED_LOT_MULTIPLIER as string,",
+				"          PO_NUMBER as string,",
+				"          RELEASE_NUM as string,",
+				"          {Recommend ETD Date} as string,",
+				"          PO_TYPE as string,",
+				"          MANUFACTURER as string,",
+				"          MFG_PART as string,",
+				"          CRITICAL_SHORTAGE_FLAG as string,",
+				"          DISTI_INDICATOR as string,",
+				"          SUPPLIER_ADDRESS as string,",
+				"          PROMISED_QUANTITY as string,",
+				"          FILE_NAME as string,",
+				"          CREATE_DATETIME as timestamp",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     limit: 100,",
+				"     format: 'query',",
+				"     store: 'sqlserver',",
+				"     query: '/****** Script for SelectTopNRows command from SSMS  ******/\\nSELECT TOP (1000) [REPORT_DATE]\\n      ,[Subcon ID]\\n      ,[Subcon Site]\\n      ,[CUSTOMER]\\n      ,[SUPPLIER]\\n      ,[PRODUCT_NAME]\\n      ,[ITEM_NUMBER]\\n      ,[STD_COST]\\n      ,[MFG]\\n      ,[ITEM_DESCRIPTION]\\n      ,[PO_CREATION_DATE]\\n      ,[LINE_NUMBER]\\n      ,[SHIPMENT_NUM]\\n      ,[QUANTITY]\\n      ,[QTY_RECEIVED]\\n      ,[In receiving Qty]\\n      ,[REMAINING_QTY]\\n      ,[ETD_DATE]\\n      ,[PROMISED_DATE]\\n      ,[LEAD_TIME]\\n      ,[TRANSIT_LEAD_TIME]\\n      ,[POSTPROCESSING_LEAD_TIME]\\n      ,[NCNR]\\n      ,[MOQ]\\n      ,[FIXED_LOT_MULTIPLIER]\\n      ,[PO_NUMBER]\\n      ,[RELEASE_NUM]\\n      ,[Recommend ETD Date]\\n      ,[PO_TYPE]\\n      ,[MANUFACTURER]\\n      ,[MFG_PART]\\n      ,[CRITICAL_SHORTAGE_FLAG]\\n      ,[DISTI_INDICATOR]\\n      ,[SUPPLIER_ADDRESS]\\n      ,[PROMISED_QUANTITY]\\n      ,[FILE_NAME]\\n      ,[CREATE_DATETIME]\\n  FROM [dbo].[tbl_Fabrinet_purchaseorder]',",
+				"     isolationLevel: 'READ_UNCOMMITTED') ~> outputsqlintelmodel",
+				"opstreamdqfile, outputsqlintelmodel lookup(opstreamdqfile@REPORT_DATE == outputsqlintelmodel@REPORT_DATE",
+				"     && opstreamdqfile@RELEASE_NUM == outputsqlintelmodel@RELEASE_NUM,",
+				"     multiple: true,",
+				"     broadcast: 'auto')~> lookup1",
+				"lookup1 exists(ERROR_FUNCTION('') == ERROR_FUNCTION(''),",
+				"     negate:false,",
+				"     broadcast: 'auto')~> exists1",
+				"exists1 sink(allowSchemaDrift: true,",
+				"     validateSchema: true,",
+				"     input(",
+				"          Column_1 as string",
+				"     ),",
+				"     filePattern:'fabrinet_WW31',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink1storagepurchaseorders"
+			]
+		}
+	}
+}
