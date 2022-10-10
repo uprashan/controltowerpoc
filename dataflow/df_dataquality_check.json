@@ -35,6 +35,9 @@
 			"transformations": [
 				{
 					"name": "lookup1"
+				},
+				{
+					"name": "exists1"
 				}
 			],
 			"scriptLines": [
@@ -141,7 +144,10 @@
 				"     && opstreamdqfile@RELEASE_NUM == outputsqlintelmodel@RELEASE_NUM,",
 				"     multiple: true,",
 				"     broadcast: 'auto')~> lookup1",
-				"lookup1 sink(allowSchemaDrift: true,",
+				"lookup1 exists(ERROR_FUNCTION('') == ERROR_FUNCTION(''),",
+				"     negate:false,",
+				"     broadcast: 'auto')~> exists1",
+				"exists1 sink(allowSchemaDrift: true,",
 				"     validateSchema: true,",
 				"     input(",
 				"          Column_1 as string",
