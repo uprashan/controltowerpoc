@@ -1,0 +1,10 @@
+{
+	"name": "pl_fault_tolerant_ingestion_fw",
+	"properties": {
+		"description": "pl_fault_tolerant_ingestion_fw",
+		"folder": {
+			"name": "ControlTower"
+		},
+		"annotations": []
+	}
+}
