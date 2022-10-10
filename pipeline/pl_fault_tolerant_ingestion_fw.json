@@ -2,6 +2,38 @@
 	"name": "pl_fault_tolerant_ingestion_fw",
 	"properties": {
 		"description": "pl_fault_tolerant_ingestion_fw",
+		"activities": [
+			{
+				"name": "Data flow1",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "df_dataquality_check",
+						"type": "DataFlowReference"
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					},
+					"traceLevel": "None",
+					"cacheSinks": {
+						"firstRowOnly": true
+					},
+					"continuationSettings": {
+						"customizedCheckpointKey": "e73c456b-ce4d-4a9a-b873-d7c0afbb7eb6"
+					}
+				}
+			}
+		],
 		"folder": {
 			"name": "ControlTower"
 		},
