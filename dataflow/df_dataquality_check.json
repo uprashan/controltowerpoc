@@ -9,11 +9,11 @@
 		"typeProperties": {
 			"sources": [
 				{
-					"dataset": {
-						"referenceName": "PO_Excel_Files",
-						"type": "DatasetReference"
+					"linkedService": {
+						"referenceName": "linkedService_dq_fti",
+						"type": "LinkedServiceReference"
 					},
-					"name": "opstream"
+					"name": "opstreamdqfile"
 				}
 			],
 			"sinks": [],
@@ -21,15 +21,20 @@
 			"scriptLines": [
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: true,",
+				"     inferDriftedColumnTypes: true,",
 				"     limit: 100,",
 				"     ignoreNoFilesFound: false,",
 				"     enableCdc: true,",
 				"     mode: 'read',",
 				"     skipInitialLoad: false,",
+				"     format: 'excel',",
+				"     fileSystem: 'faulttolerant-ingestion',",
+				"     sheetIndex: 0,",
+				"     firstRowAsHeader: true,",
 				"     dateFormats: ['MM-dd-yyyy'],",
 				"     timestampFormats: ['yyyy-MM-dd\\'T\\'HH:mm:ss'],",
 				"     preferredIntegralType: 'integer',",
-				"     preferredFractionalType: 'double') ~> opstream"
+				"     preferredFractionalType: 'double') ~> opstreamdqfile"
 			]
 		}
 	}
