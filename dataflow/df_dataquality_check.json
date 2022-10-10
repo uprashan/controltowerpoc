@@ -23,7 +23,15 @@
 					"name": "outputsqlintelmodel"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "sinkapprovedpofiles",
+						"type": "DatasetReference"
+					},
+					"name": "sink1storagepurchaseorders"
+				}
+			],
 			"transformations": [
 				{
 					"name": "lookup1"
@@ -132,7 +140,14 @@
 				"opstreamdqfile, outputsqlintelmodel lookup(opstreamdqfile@REPORT_DATE == outputsqlintelmodel@REPORT_DATE",
 				"     && opstreamdqfile@RELEASE_NUM == outputsqlintelmodel@RELEASE_NUM,",
 				"     multiple: true,",
-				"     broadcast: 'auto')~> lookup1"
+				"     broadcast: 'auto')~> lookup1",
+				"lookup1 sink(allowSchemaDrift: true,",
+				"     validateSchema: true,",
+				"     input(",
+				"          Column_1 as string",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink1storagepurchaseorders"
 			]
 		}
 	}

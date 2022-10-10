@@ -1,0 +1,25 @@
+{
+	"name": "sinkapprovedpofiles",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureControlTowerFiles",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "purchaseorders"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"type": "String"
+			}
+		]
+	}
+}
