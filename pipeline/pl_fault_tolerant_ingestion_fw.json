@@ -4,7 +4,7 @@
 		"description": "pl_fault_tolerant_ingestion_fw",
 		"activities": [
 			{
-				"name": "Data flow1",
+				"name": "df_fault_tolerant_ingestion_fw",
 				"type": "ExecuteDataFlow",
 				"dependsOn": [],
 				"policy": {
