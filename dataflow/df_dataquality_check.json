@@ -144,7 +144,7 @@
 				"     && opstreamdqfile@RELEASE_NUM == outputsqlintelmodel@RELEASE_NUM,",
 				"     multiple: true,",
 				"     broadcast: 'auto')~> lookup1",
-				"lookup1 exists(ERROR_FUNCTION('') == ERROR_FUNCTION(''),",
+				"lookup1 exists(') == ERROR_FUNCTION(',",
 				"     negate:false,",
 				"     broadcast: 'auto')~> exists1",
 				"exists1 sink(allowSchemaDrift: true,",
