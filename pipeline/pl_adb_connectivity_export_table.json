@@ -1,0 +1,9 @@
+{
+	"name": "pl_adb_connectivity_export_table",
+	"properties": {
+		"folder": {
+			"name": "ControlTower/CT Databricks"
+		},
+		"annotations": []
+	}
+}
