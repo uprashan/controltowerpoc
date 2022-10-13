@@ -185,8 +185,8 @@
 				"          Business_Unit_ID = CUSTOMER,",
 				"          Component_Supplier_Name = SUPPLIER,",
 				"          Critical_Shortage_Flag = opstreamdqfile@CRITICAL_SHORTAGE_FLAG,",
-				"          Distributor_Name = SUPPLIER,",
 				"          IDMI_PO = opstreamdqfile@DISTI_INDICATOR,",
+				"          Distributor_Name = SUPPLIER,",
 				"          Intel_Part_Number = ITEM_NUMBER,",
 				"          Intel_Part_Number_IDENTIFIER = CUSTOMER,",
 				"          Manufacturer_Name = MANUFACTURER,",
@@ -223,8 +223,7 @@
 				"     ),",
 				"     partitionFileNames:['controltower_output.csv'],",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true,",
-				"     partitionBy('hash', 1)) ~> storagepurchaseorders"
+				"     skipDuplicateMapOutputs: true) ~> storagepurchaseorders"
 			]
 		}
 	}
