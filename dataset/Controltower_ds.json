@@ -1,0 +1,162 @@
+{
+	"name": "Controltower_ds",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureControlTowerFiles",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Turnkey20_1000010826_202207292110_ww31.xlsx",
+				"container": "purchaseorders"
+			},
+			"sheetIndex": 0,
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "REPORT_DATE",
+				"type": "String"
+			},
+			{
+				"name": "Subcon ID",
+				"type": "String"
+			},
+			{
+				"name": "Subcon Site",
+				"type": "String"
+			},
+			{
+				"name": "CUSTOMER",
+				"type": "String"
+			},
+			{
+				"name": "SUPPLIER",
+				"type": "String"
+			},
+			{
+				"name": "PRODUCT_NAME",
+				"type": "String"
+			},
+			{
+				"name": "ITEM_NUMBER",
+				"type": "String"
+			},
+			{
+				"name": "STD_COST",
+				"type": "String"
+			},
+			{
+				"name": "MFG",
+				"type": "String"
+			},
+			{
+				"name": "ITEM_DESCRIPTION",
+				"type": "String"
+			},
+			{
+				"name": "PO_CREATION_DATE",
+				"type": "String"
+			},
+			{
+				"name": "LINE_NUMBER",
+				"type": "String"
+			},
+			{
+				"name": "SHIPMENT_NUM",
+				"type": "String"
+			},
+			{
+				"name": "QUANTITY",
+				"type": "String"
+			},
+			{
+				"name": "QTY_RECEIVED",
+				"type": "String"
+			},
+			{
+				"name": "In receiving Qty",
+				"type": "String"
+			},
+			{
+				"name": "REMAINING_QTY",
+				"type": "String"
+			},
+			{
+				"name": "ETD_DATE",
+				"type": "String"
+			},
+			{
+				"name": "PROMISED_DATE",
+				"type": "String"
+			},
+			{
+				"name": "LEAD_TIME",
+				"type": "String"
+			},
+			{
+				"name": "TRANSIT_LEAD_TIME",
+				"type": "String"
+			},
+			{
+				"name": "POSTPROCESSING_LEAD_TIME",
+				"type": "String"
+			},
+			{
+				"name": "NCNR",
+				"type": "String"
+			},
+			{
+				"name": "MOQ",
+				"type": "String"
+			},
+			{
+				"name": "FIXED_LOT_MULTIPLIER",
+				"type": "String"
+			},
+			{
+				"name": "PO_NUMBER",
+				"type": "String"
+			},
+			{
+				"name": "RELEASE_NUM",
+				"type": "String"
+			},
+			{
+				"name": "Recommend ETD Date",
+				"type": "String"
+			},
+			{
+				"name": "PO_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "MANUFACTURER",
+				"type": "String"
+			},
+			{
+				"name": "MFG_PART",
+				"type": "String"
+			},
+			{
+				"name": "CRITICAL_SHORTAGE_FLAG",
+				"type": "String"
+			},
+			{
+				"name": "DISTI_INDICATOR",
+				"type": "String"
+			},
+			{
+				"name": "SUPPLIER_ADDRESS",
+				"type": "String"
+			},
+			{
+				"name": "PROMISED_QUANTITY",
+				"type": "String"
+			}
+		]
+	}
+}
