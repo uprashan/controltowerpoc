@@ -29,7 +29,7 @@
 						"referenceName": "sinkapprovedpofiles",
 						"type": "DatasetReference"
 					},
-					"name": "sink1storagepurchaseorders"
+					"name": "storagepurchaseorders"
 				}
 			],
 			"transformations": [
@@ -39,7 +39,7 @@
 			],
 			"scriptLines": [
 				"source(output(",
-				"          REPORT_DATE as string,",
+				"          REPORT_DATE as date,",
 				"          {Subcon ID} as string,",
 				"          {Subcon Site} as string,",
 				"          CUSTOMER as string,",
@@ -49,14 +49,14 @@
 				"          STD_COST as string,",
 				"          MFG as string,",
 				"          ITEM_DESCRIPTION as string,",
-				"          PO_CREATION_DATE as string,",
+				"          PO_CREATION_DATE as date,",
 				"          LINE_NUMBER as string,",
 				"          SHIPMENT_NUM as string,",
 				"          QUANTITY as string,",
-				"          QTY_RECEIVED as string,",
+				"          QTY_RECEIVED as double,",
 				"          {In receiving Qty} as string,",
 				"          REMAINING_QTY as string,",
-				"          ETD_DATE as string,",
+				"          ETD_DATE as date,",
 				"          PROMISED_DATE as string,",
 				"          LEAD_TIME as string,",
 				"          TRANSIT_LEAD_TIME as string,",
@@ -66,7 +66,7 @@
 				"          FIXED_LOT_MULTIPLIER as string,",
 				"          PO_NUMBER as string,",
 				"          RELEASE_NUM as string,",
-				"          {Recommend ETD Date} as string,",
+				"          {Recommend ETD Date} as date,",
 				"          PO_TYPE as string,",
 				"          MANUFACTURER as string,",
 				"          MFG_PART as string,",
@@ -155,15 +155,28 @@
 				"     && MANUFACTURER == Manufacturer_Name",
 				"     && MFG_PART == Manufacturing_Part_Number",
 				"     && ITEM_NUMBER == ODM_Part_Number",
-				"     && opstreamdqfile@PO_CREATION_DATE == outputsqlintelmodel@PO_creation_Date",
 				"     && LINE_NUMBER == PO_Line_Item",
+				"     && opstreamdqfile@PO_CREATION_DATE == outputsqlintelmodel@PO_creation_Date",
 				"     && opstreamdqfile@PO_NUMBER == outputsqlintelmodel@PO_Number",
 				"     && SHIPMENT_NUM == PO_Schedule_Line_Item",
 				"     && opstreamdqfile@REPORT_DATE == outputsqlintelmodel@Report_Date",
 				"     && opstreamdqfile@REPORT_DATE == Shipment_Receipt_Date",
 				"     && QTY_RECEIVED == Shipment_Receipt_Quantity",
 				"     && {Subcon Site} == Subcon_Site",
-				"     && {Subcon ID} == Subcon_ID,",
+				"     && {Subcon ID} == Subcon_ID",
+				"     && LEAD_TIME == Target_LeadTime",
+				"     && RELEASE_NUM == Release_Number",
+				"     && opstreamdqfile@PO_TYPE == outputsqlintelmodel@PO_Type",
+				"     && opstreamdqfile@DISTI_INDICATOR == outputsqlintelmodel@Disti_Indicator",
+				"     && LINE_NUMBER == PO_Line_Item",
+				"     && ITEM_DESCRIPTION == IPN_Description",
+				"     && SUPPLIER_ADDRESS == Address_For_Component_Supplier",
+				"     && SUPPLIER_ADDRESS == Address_For_Disti",
+				"     && opstreamdqfile@NCNR == outputsqlintelmodel@NCNR",
+				"     && MOQ == Supplier_MOQ",
+				"     && opstreamdqfile@TRANSIT_LEAD_TIME == outputsqlintelmodel@Transit_Lead_Time",
+				"     && opstreamdqfile@POSTPROCESSING_LEAD_TIME == outputsqlintelmodel@Postprocessing_Lead_Time",
+				"     && opstreamdqfile@PO_NUMBER == Tier2_PO_Number,",
 				"     multiple: true,",
 				"     broadcast: 'auto')~> lookup1",
 				"lookup1 sink(allowSchemaDrift: true,",
@@ -171,9 +184,10 @@
 				"     input(",
 				"          Column_1 as string",
 				"     ),",
-				"     filePattern:'fabrinet_WW31',",
+				"     partitionFileNames:['controltower_output.csv'],",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> sink1storagepurchaseorders"
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> storagepurchaseorders"
 			]
 		}
 	}
