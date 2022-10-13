@@ -1,0 +1,25 @@
+{
+	"name": "AzureDatabricks_CT_LinkedService",
+	"properties": {
+		"description": "AzureDatabricks_CT_LinkedService",
+		"annotations": [],
+		"type": "AzureDatabricks",
+		"typeProperties": {
+			"domain": "https://adb-4832462725384368.8.azuredatabricks.net",
+			"authentication": "MSI",
+			"workspaceResourceId": "/subscriptions/6f233d18-bb37-448d-9517-9d0c140f6217/resourceGroups/rg-controltower-poc/providers/Microsoft.Databricks/workspaces/db-controltower-poc",
+			"newClusterNodeType": "Standard_DS3_v2",
+			"newClusterNumOfWorker": "1",
+			"newClusterSparkEnvVars": {
+				"PYSPARK_PYTHON": "/databricks/python3/bin/python3"
+			},
+			"newClusterVersion": "11.2.x-scala2.12",
+			"newClusterInitScripts": [],
+			"clusterOption": "Fixed"
+		},
+		"connectVia": {
+			"referenceName": "AutoResolveIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
