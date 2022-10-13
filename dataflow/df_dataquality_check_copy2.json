@@ -221,9 +221,10 @@
 				"     input(",
 				"          Column_1 as string",
 				"     ),",
-				"     partitionFileNames:['controltower_output.csv'],",
+				"     partitionFileNames:['po_fabrinet_intel_model.csv'],",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> storagepurchaseorders"
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> storagepurchaseorders"
 			]
 		}
 	}
