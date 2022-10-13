@@ -16,7 +16,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Users/uk.prashanth@intel.com/ControlTower SQL Queries"
+					"notebookPath": "/Users/uk.prashanth@intel.com/ControlTower_Export_table_CSV"
 				},
 				"linkedServiceName": {
 					"referenceName": "AzureDatabricks_CT_LinkedService",
