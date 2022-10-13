@@ -3,7 +3,8 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Notebook1",
+				"name": "adb_controltower_notebook",
+				"description": "adb_controltower_notebook",
 				"type": "DatabricksNotebook",
 				"dependsOn": [],
 				"policy": {
@@ -13,7 +14,14 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/uk.prashanth@intel.com/ControlTower SQL Queries"
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureDatabricks_CT_LinkedService",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
 		"folder": {
