@@ -1,0 +1,119 @@
+{
+	"name": "BY_DMS_API_Sink_DS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureControlTowerFiles",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "faulttolerant-ingestion-approved"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Business_Unit_ID",
+				"type": "String"
+			},
+			{
+				"name": "Component_Supplier_Name",
+				"type": "String"
+			},
+			{
+				"name": "Critical_Shortage_Flag",
+				"type": "String"
+			},
+			{
+				"name": "IDMI_PO",
+				"type": "String"
+			},
+			{
+				"name": "Intel_Part_Number",
+				"type": "String"
+			},
+			{
+				"name": "Manufacturer_Name",
+				"type": "String"
+			},
+			{
+				"name": "Manufacturing_Part_Number",
+				"type": "String"
+			},
+			{
+				"name": "PO_Line_Itemn",
+				"type": "String"
+			},
+			{
+				"name": "PO_creation_Date",
+				"type": "String"
+			},
+			{
+				"name": "PO_Number",
+				"type": "String"
+			},
+			{
+				"name": "PO_Schedule_Line_Item",
+				"type": "String"
+			},
+			{
+				"name": "Report_Date",
+				"type": "String"
+			},
+			{
+				"name": "Shipment_Receipt_Quantity",
+				"type": "String"
+			},
+			{
+				"name": "Subcon_Site",
+				"type": "String"
+			},
+			{
+				"name": "Subcon_ID",
+				"type": "String"
+			},
+			{
+				"name": "Target_LeadTime",
+				"type": "String"
+			},
+			{
+				"name": "Release_Number",
+				"type": "String"
+			},
+			{
+				"name": "PO_Type",
+				"type": "String"
+			},
+			{
+				"name": "IPN_Description",
+				"type": "String"
+			},
+			{
+				"name": "Address_For_Component_Supplier",
+				"type": "String"
+			},
+			{
+				"name": "NCNR",
+				"type": "String"
+			},
+			{
+				"name": "Supplier_MOQ",
+				"type": "String"
+			},
+			{
+				"name": "Transit_Lead_Time",
+				"type": "String"
+			},
+			{
+				"name": "Postprocessing_Lead_Time",
+				"type": "String"
+			}
+		]
+	}
+}
