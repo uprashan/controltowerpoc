@@ -3,21 +3,16 @@
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "RestService1",
-			"type": "LinkedServiceReference",
-			"parameters": {
-				"Token": {
-					"value": "@dataset().Token",
-					"type": "Expression"
-				}
-			}
-		},
-		"parameters": {
-			"Token": {
-				"type": "string"
-			}
+			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": {
+				"value": "/indsol/data-management/v1/ingestion/items",
+				"type": "Expression"
+			}
+		},
 		"schema": []
 	}
 }

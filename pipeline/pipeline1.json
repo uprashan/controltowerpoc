@@ -60,7 +60,14 @@
 						"type": "RestSource",
 						"httpRequestTimeout": "00:01:40",
 						"requestInterval": "00.00:00:00.010",
-						"requestMethod": "GET",
+						"requestMethod": "POST",
+						"requestBody": "ITEM,ITEMDESC,U_ITEM_TYPE,ITEMFAMILYGROUP,LINEOFBUSINESS,OWNEROFTRADEITEM,PARTICIPANTNAME,ITEMSTATUSCODE,UNITRETAILPRICE,UNITRETAILPRICE_CURRENCYCODE,U_FAMILY,U_CLASS_CD_SUBCLASS_CD,U_CLASS_CD,U_CATEGORY,SEGMENT,UNITOFMEASURE,ITEMCLASS,SBU,FAMILY,U_Product_Hierarchy,,\n951971,OPTICAL MOD SPTSBP3PTCSM001,Purchased,Sensors,Network,CUST,CUST,Active,100,USD,,,,,,PALLET,DCG,Intel,SPTSBP3PTC,Finished GD-Board,,\n951988,OPTICAL MOD SPTSBP3PTCSM003,Purchased,Sensors,Network,CUST,CUST,Active,100,USD,,,,,,PALLET,DCG,Intel,SPTSBP3PTC,Finished GD-Board,,\n952014,OPTICAL MOD SPTSBP3PTCSM006,Purchased,Sensors,Network,CUST,CUST,Active,100,USD,,,,,,PALLET,DCG,Intel,SPTSBP3PTC,Finished GD-Board,,",
+						"additionalHeaders": {
+							"Authorization": {
+								"value": "Bearer @{activity('Web1').output.access_token}",
+								"type": "Expression"
+							}
+						},
 						"paginationRules": {
 							"supportRFC5988": "true"
 						}
@@ -73,7 +80,7 @@
 						"formatSettings": {
 							"type": "DelimitedTextWriteSettings",
 							"quoteAllText": true,
-							"fileExtension": ".txt"
+							"fileExtension": ".csv"
 						}
 					},
 					"enableStaging": false
@@ -81,13 +88,7 @@
 				"inputs": [
 					{
 						"referenceName": "RestResource1",
-						"type": "DatasetReference",
-						"parameters": {
-							"Token": {
-								"value": "@concat('Authorization: Bearer', activity('Web1').output.access_token)",
-								"type": "Expression"
-							}
-						}
+						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
