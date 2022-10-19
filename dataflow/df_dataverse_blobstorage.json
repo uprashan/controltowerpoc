@@ -1,0 +1,17 @@
+{
+	"name": "df_dataverse_blobstorage",
+	"properties": {
+		"folder": {
+			"name": "Control_Tower"
+		},
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [],
+			"sinks": [],
+			"transformations": [],
+			"scriptLines": [
+				""
+			]
+		}
+	}
+}
