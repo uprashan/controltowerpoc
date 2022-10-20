@@ -10,6 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
+				"fileName": "po_fabrinet_intel_model.csv",
 				"container": "faulttolerant-ingestion-approved"
 			},
 			"columnDelimiter": ",",
