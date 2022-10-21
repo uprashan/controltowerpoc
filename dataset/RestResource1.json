@@ -2,7 +2,7 @@
 	"name": "RestResource1",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "RestService1",
+			"referenceName": "BY_DMS_API 1",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],

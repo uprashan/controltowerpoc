@@ -1,9 +1,9 @@
 {
-	"name": "pl_integrate_Azure _to_BY_DMS_using_RestAPI",
+	"name": "pl_integrate_BY_DMS_using_RestAPI_to_Azure_Storage",
 	"properties": {
 		"activities": [
 			{
-				"name": "Token for BY DMS using Rest API",
+				"name": "Web1",
 				"type": "WebActivity",
 				"dependsOn": [],
 				"policy": {
@@ -37,11 +37,11 @@
 				}
 			},
 			{
-				"name": "Copy storage account to BY DMS using Rest API",
+				"name": "Copy data1",
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "Token for BY DMS using Rest API",
+						"activity": "Web1",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -56,36 +56,22 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"source": {
-						"type": "DelimitedTextSource",
+					"sink": {
+						"type": "DelimitedTextSink",
 						"storeSettings": {
-							"type": "AzureBlobStorageReadSettings",
-							"recursive": true,
-							"enablePartitionDiscovery": false
+							"type": "AzureBlobStorageWriteSettings"
 						},
 						"formatSettings": {
-							"type": "DelimitedTextReadSettings"
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".csv"
 						}
-					},
-					"sink": {
-						"type": "RestSink",
-						"httpRequestTimeout": "00:01:40",
-						"requestInterval": 10,
-						"requestMethod": "POST",
-						"writeBatchSize": 10000,
-						"httpCompressionType": "none"
 					},
 					"enableStaging": false
 				},
-				"inputs": [
-					{
-						"referenceName": "ds_csv",
-						"type": "DatasetReference"
-					}
-				],
 				"outputs": [
 					{
-						"referenceName": "RestResource1",
+						"referenceName": "BY_DMS_to_Azure",
 						"type": "DatasetReference"
 					}
 				]

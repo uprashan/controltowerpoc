@@ -1,5 +1,5 @@
 {
-	"name": "ds_csv",
+	"name": "BY_DMS_to_Azure",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureControlTowerFiles",
@@ -10,8 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "items-20221017_160431.csv",
-				"container": "purchaseoderssink"
+				"container": "purchaseorders"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
