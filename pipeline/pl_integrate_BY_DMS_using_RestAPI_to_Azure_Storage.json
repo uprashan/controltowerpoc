@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Web1",
+				"name": "Token for BY DMS using Rest API",
 				"type": "WebActivity",
 				"dependsOn": [],
 				"policy": {
@@ -37,11 +37,11 @@
 				}
 			},
 			{
-				"name": "Copy data1",
+				"name": "Copy file from BY DMS using Rest API to storage account",
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "Web1",
+						"activity": "Token for BY DMS using Rest API",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -56,6 +56,21 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
+					"source": {
+						"type": "RestSource",
+						"httpRequestTimeout": "00:01:40",
+						"requestInterval": "00.00:00:00.010",
+						"requestMethod": "POST",
+						"additionalHeaders": {
+							"Authorization": {
+								"value": "Bearer @{activity('Token for BY DMS using Rest API').output.access_token}",
+								"type": "Expression"
+							}
+						},
+						"paginationRules": {
+							"supportRFC5988": "true"
+						}
+					},
 					"sink": {
 						"type": "DelimitedTextSink",
 						"storeSettings": {
@@ -69,9 +84,15 @@
 					},
 					"enableStaging": false
 				},
+				"inputs": [
+					{
+						"referenceName": "Rest_API_BY_DMS_2",
+						"type": "DatasetReference"
+					}
+				],
 				"outputs": [
 					{
-						"referenceName": "BY_DMS_to_Azure",
+						"referenceName": "ds_by_dms_Rest_API_2",
 						"type": "DatasetReference"
 					}
 				]

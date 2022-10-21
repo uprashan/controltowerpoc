@@ -79,13 +79,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "ds_csv",
+						"referenceName": "ds_by_dms_Rest_API_1",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "RestResource1",
+						"referenceName": "Rest_API_BY_DMS_1",
 						"type": "DatasetReference"
 					}
 				]

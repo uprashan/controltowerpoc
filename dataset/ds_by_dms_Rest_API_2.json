@@ -1,5 +1,5 @@
 {
-	"name": "BY_DMS_to_Azure",
+	"name": "ds_by_dms_Rest_API_2",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureControlTowerFiles",
