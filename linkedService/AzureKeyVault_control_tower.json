@@ -1,0 +1,10 @@
+{
+	"name": "AzureKeyVault_control_tower",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://kv-controltower-poc.vault.azure.net/"
+		}
+	}
+}
