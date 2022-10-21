@@ -4,7 +4,7 @@
 		"annotations": [],
 		"type": "RestService",
 		"typeProperties": {
-			"url": "https://api.jdadelivers.com/indsol/data-management/v1/ingestion/items",
+			"url": "https://api.jdadelivers.com",
 			"enableServerCertificateValidation": true,
 			"authenticationType": "OAuth2ClientCredential",
 			"clientId": "5b5e635a-2273-400d-ad6e-e82290053523",
