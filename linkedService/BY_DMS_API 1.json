@@ -11,7 +11,7 @@
 			"clientSecret": {
 				"type": "AzureKeyVaultSecret",
 				"store": {
-					"referenceName": "AzureKeyVault1",
+					"referenceName": "AzureKeyVault_control_tower",
 					"type": "LinkedServiceReference"
 				},
 				"secretName": "dms-secret"
