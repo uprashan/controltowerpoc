@@ -6,7 +6,7 @@
 		"type": "CommonDataServiceForApps",
 		"typeProperties": {
 			"deploymentType": "Online",
-			"serviceUri": "https://orgaff3e7c6.crm.dynamics.com",
+			"serviceUri": "https://make.powerapps.com/e/54513fd1-8bce-4f7a-a89e-865e9813ae73/s/00000001-0000-0000-0001-00000000009b/app/edit/1e14f9e9-124e-ed11-bba1-000d3a3144ed",
 			"authenticationType": "AADServicePrincipal",
 			"servicePrincipalCredentialType": "ServicePrincipalKey",
 			"servicePrincipalId": "fb77ca2d-aa53-419e-8390-a35ff64cca1f",
