@@ -9,7 +9,7 @@
 		"type": "RestResource",
 		"typeProperties": {
 			"relativeUrl": {
-				"value": "/indsol/data-management/v1/ingestion/items",
+				"value": "/indsol/data-management/v1/ingestion/purchaseorders",
 				"type": "Expression"
 			}
 		},

@@ -9,7 +9,7 @@
 		"type": "CommonDataServiceForAppsEntity",
 		"schema": [],
 		"typeProperties": {
-			"entityName": "craf2_oct_odm_intel_model"
+			"entityName": "craf2_oct_intel_model"
 		}
 	}
 }
