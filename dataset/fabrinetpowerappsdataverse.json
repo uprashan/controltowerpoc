@@ -1,0 +1,147 @@
+{
+	"name": "fabrinetpowerappsdataverse",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureControlTowerFiles",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "fabrinetpowerappsdataverse"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "craf2_name",
+				"type": "String"
+			},
+			{
+				"name": "craf2_oct_odm_intel_modelid",
+				"type": "String"
+			},
+			{
+				"name": "craf2_total_inventory",
+				"type": "String"
+			},
+			{
+				"name": "createdby",
+				"type": "String"
+			},
+			{
+				"name": "createdbyname",
+				"type": "String"
+			},
+			{
+				"name": "createdbyyominame",
+				"type": "String"
+			},
+			{
+				"name": "createdon",
+				"type": "String"
+			},
+			{
+				"name": "createdonbehalfby",
+				"type": "String"
+			},
+			{
+				"name": "createdonbehalfbyname",
+				"type": "String"
+			},
+			{
+				"name": "createdonbehalfbyyominame",
+				"type": "String"
+			},
+			{
+				"name": "importsequencenumber",
+				"type": "String"
+			},
+			{
+				"name": "modifiedby",
+				"type": "String"
+			},
+			{
+				"name": "modifiedbyname",
+				"type": "String"
+			},
+			{
+				"name": "modifiedbyyominame",
+				"type": "String"
+			},
+			{
+				"name": "modifiedon",
+				"type": "String"
+			},
+			{
+				"name": "modifiedonbehalfby",
+				"type": "String"
+			},
+			{
+				"name": "modifiedonbehalfbyname",
+				"type": "String"
+			},
+			{
+				"name": "modifiedonbehalfbyyominame",
+				"type": "String"
+			},
+			{
+				"name": "overriddencreatedon",
+				"type": "String"
+			},
+			{
+				"name": "ownerid",
+				"type": "String"
+			},
+			{
+				"name": "owneridname",
+				"type": "String"
+			},
+			{
+				"name": "owneridtype",
+				"type": "String"
+			},
+			{
+				"name": "owneridyominame",
+				"type": "String"
+			},
+			{
+				"name": "owningbusinessunit",
+				"type": "String"
+			},
+			{
+				"name": "owningteam",
+				"type": "String"
+			},
+			{
+				"name": "owninguser",
+				"type": "String"
+			},
+			{
+				"name": "statecode",
+				"type": "String"
+			},
+			{
+				"name": "statuscode",
+				"type": "String"
+			},
+			{
+				"name": "timezoneruleversionnumber",
+				"type": "String"
+			},
+			{
+				"name": "utcconversiontimezonecode",
+				"type": "String"
+			},
+			{
+				"name": "versionnumber",
+				"type": "String"
+			}
+		]
+	}
+}
