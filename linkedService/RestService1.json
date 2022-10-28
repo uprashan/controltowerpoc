@@ -1,0 +1,27 @@
+{
+	"name": "RestService1",
+	"properties": {
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": "https://api.jdadelivers.com",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "OAuth2ClientCredential",
+			"clientId": "5b5e635a-2273-400d-ad6e-e82290053523",
+			"clientSecret": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVault_control_tower",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "dms-secret"
+			},
+			"tokenEndpoint": "https://login.microsoftonline.com/blueyonderus.onmicrosoft.com/oauth2/v2.0/token",
+			"scope": "https://blueyonderus.onmicrosoft.com/69adb04d-658f-4b86-a659-67fe0f23bd1f/.default"
+		},
+		"connectVia": {
+			"referenceName": "AutoResolveIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
