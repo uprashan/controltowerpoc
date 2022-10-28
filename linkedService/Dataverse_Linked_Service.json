@@ -6,7 +6,7 @@
 		"type": "CommonDataServiceForApps",
 		"typeProperties": {
 			"deploymentType": "Online",
-			"serviceUri": "https://orgaff3e7c6.crm.dynamics.com/main.aspx?appid=1e14f9e9-124e-ed11-bba1-000d3a3144ed&pagetype=entitylist&etn=craf2_oct_intel_model&viewid=f5758c28-3154-ed11-bba3-000d3a3144ed&viewType=4230",
+			"serviceUri": "https://orgaff3e7c6.crm.dynamics.com/main.aspx?appid=1e14f9e9-124e-ed11-bba1-000d3a3144ed&forceUCI=1&pagetype=entitylist&etn=craf2_oct_intel_model&viewid=f5758c28-3154-ed11-bba3-000d3a3144ed&viewType=4230",
 			"authenticationType": "AADServicePrincipal",
 			"servicePrincipalCredentialType": "ServicePrincipalKey",
 			"servicePrincipalId": "fb77ca2d-aa53-419e-8390-a35ff64cca1f",
