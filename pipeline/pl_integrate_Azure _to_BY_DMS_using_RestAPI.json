@@ -54,7 +54,16 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [],
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "purchaseoderssink//items-20221017_160431.csv"
+					},
+					{
+						"name": "Destination",
+						"value": "/indsol/data-management/v1/ingestion/purchaseorders"
+					}
+				],
 				"typeProperties": {
 					"source": {
 						"type": "DelimitedTextSource",
