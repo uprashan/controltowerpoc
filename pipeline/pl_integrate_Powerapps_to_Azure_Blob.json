@@ -29,7 +29,152 @@
 							"fileExtension": ".csv"
 						}
 					},
-					"enableStaging": false
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "craf2_ncnr",
+									"type": "String"
+								},
+								"sink": {
+									"name": "NCNR",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "craf2_customorstandard",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Business_Unit_ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "craf2_subconid",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Subcon_ID",
+									"type": "Int16"
+								}
+							},
+							{
+								"source": {
+									"name": "craf2_subconsite",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Subcon_site",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "craf2_criticalshortageflag",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Critical_Shortage_Flag",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "craf2_distiindicator",
+									"type": "String"
+								},
+								"sink": {
+									"name": "IDMI_PO",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "craf2_pocreationdate",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "PO_Create_Date",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "craf2_ponumber",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PO_Number",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "craf2_reportdate",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "Report_Date",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "craf2_releasenumber",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Release_Number",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "craf2_potype",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PO_Type",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "craf2_suppliermoq",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Supplier_MOQ",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "craf2_transitleadtime",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Transit_Lead_Time",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "craf2_postprocessingleadtime",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Postprocessing_Lead_Time",
+									"type": "DateTime"
+								}
+							}
+						]
+					}
 				},
 				"inputs": [
 					{
