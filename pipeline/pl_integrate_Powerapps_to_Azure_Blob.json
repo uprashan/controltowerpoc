@@ -172,7 +172,8 @@
 									"name": "Postprocessing_Lead_Time",
 									"type": "DateTime"
 								}
-							}
+							},
+							null
 						]
 					}
 				},
