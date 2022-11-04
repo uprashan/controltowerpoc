@@ -35,6 +35,86 @@
 						"mappings": [
 							{
 								"source": {
+									"name": "craf2_addressfordisti",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Address For Disti",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "craf2_businessunitid",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Business Unit ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "craf2_criticalshortageflag",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Critical Shortage Flag",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "craf2_distributorname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Distributor Name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "craf2_idmipo",
+									"type": "String"
+								},
+								"sink": {
+									"name": "IDMI PO",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "craf2_ipndescription",
+									"type": "String"
+								},
+								"sink": {
+									"name": "IPN Description",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "craf2_manufacturername",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Manufacturer Name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "craf2_manufacturingpartnumber",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Manufacturing Part Number",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
 									"name": "craf2_ncnr",
 									"type": "String"
 								},
@@ -45,11 +125,101 @@
 							},
 							{
 								"source": {
-									"name": "craf2_customorstandard",
+									"name": "craf2_odmpartnumber",
 									"type": "String"
 								},
 								"sink": {
-									"name": "Business_Unit_ID",
+									"name": "ODM Part Number",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "craf2_pocreationdate",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "PO creation Date",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "craf2_polineitem",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PO Line Item",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "craf2_ponumber",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PO Number",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "craf2_poschedulelineitem",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PO Schedule Line Item",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "craf2_postprocessingleadtime",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Postprocessing Lead Time",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "craf2_potype",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PO Type",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "craf2_releasenumber",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Release Number",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "craf2_reportdate",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "Report Date",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "craf2_shipmentreceiptquantity",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Shipment Receipt Quantity",
 									"type": "String"
 								}
 							},
@@ -59,8 +229,8 @@
 									"type": "String"
 								},
 								"sink": {
-									"name": "Subcon_ID",
-									"type": "Int16"
+									"name": "Subcon ID",
+									"type": "Int64"
 								}
 							},
 							{
@@ -69,77 +239,7 @@
 									"type": "String"
 								},
 								"sink": {
-									"name": "Subcon_site",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "craf2_criticalshortageflag",
-									"type": "String"
-								},
-								"sink": {
-									"name": "Critical_Shortage_Flag",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "craf2_distiindicator",
-									"type": "String"
-								},
-								"sink": {
-									"name": "IDMI_PO",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "craf2_pocreationdate",
-									"type": "DateTime"
-								},
-								"sink": {
-									"name": "PO_Create_Date",
-									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
-									"name": "craf2_ponumber",
-									"type": "String"
-								},
-								"sink": {
-									"name": "PO_Number",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "craf2_reportdate",
-									"type": "DateTime"
-								},
-								"sink": {
-									"name": "Report_Date",
-									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
-									"name": "craf2_releasenumber",
-									"type": "String"
-								},
-								"sink": {
-									"name": "Release_Number",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "craf2_potype",
-									"type": "String"
-								},
-								"sink": {
-									"name": "PO_Type",
+									"name": "Subcon Site",
 									"type": "String"
 								}
 							},
@@ -149,8 +249,18 @@
 									"type": "String"
 								},
 								"sink": {
-									"name": "Supplier_MOQ",
+									"name": "Supplier MOQ",
 									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "craf2_targetleadtime",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Target Lead Time",
+									"type": "DateTime"
 								}
 							},
 							{
@@ -162,18 +272,7 @@
 									"name": "Transit_Lead_Time",
 									"type": "DateTime"
 								}
-							},
-							{
-								"source": {
-									"name": "craf2_postprocessingleadtime",
-									"type": "String"
-								},
-								"sink": {
-									"name": "Postprocessing_Lead_Time",
-									"type": "DateTime"
-								}
-							},
-							null
+							}
 						]
 					}
 				},

@@ -272,6 +272,11 @@
 									"name": "Transit Lead Time",
 									"type": "DateTime"
 								}
+							},
+							{
+								"source": {
+									"name": "address"
+								}
 							}
 						]
 					}
