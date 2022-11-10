@@ -272,7 +272,8 @@
 									"name": "Transit_Lead_Time",
 									"type": "DateTime"
 								}
-							}
+							},
+							null
 						]
 					}
 				},
