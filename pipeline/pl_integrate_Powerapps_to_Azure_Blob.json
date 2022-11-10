@@ -95,6 +95,26 @@
 							},
 							{
 								"source": {
+									"name": "craf2_ncnr",
+									"type": "String"
+								},
+								"sink": {
+									"name": "NCNR",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "craf2_odmpartnumber",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ODM Part Number",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
 									"name": "craf2_pocommitdate",
 									"type": "DateTime"
 								},
@@ -119,7 +139,7 @@
 									"type": "DateTime"
 								},
 								"sink": {
-									"name": "PO creation Date",
+									"name": "PO Creation Date",
 									"type": "DateTime"
 								}
 							},
@@ -205,11 +225,41 @@
 							},
 							{
 								"source": {
-									"name": "craf2_odmpartnumber",
+									"name": "craf2_suppliermoq",
 									"type": "String"
 								},
 								"sink": {
-									"name": "ODM Part Number",
+									"name": "Supplier MOQ",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedby",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "ModifiedBy",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedon",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "ModifiedOn",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ownerid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "Owner",
 									"type": "String"
 								}
 							}
