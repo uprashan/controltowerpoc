@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "Biz_demo_oct_odm_intel_model.csv",
+				"fileName": "11-11-2022.csv",
 				"container": "fabrinetpowerappsdataverse"
 			},
 			"columnDelimiter": ",",
