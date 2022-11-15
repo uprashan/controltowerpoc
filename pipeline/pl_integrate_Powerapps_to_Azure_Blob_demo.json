@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy Powerapps to Azure Blob",
+				"name": "Copy Powerapps Data to Azure Blob",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -272,8 +272,7 @@
 									"name": "Transit_Lead_Time",
 									"type": "DateTime"
 								}
-							},
-							null
+							}
 						]
 					}
 				},
