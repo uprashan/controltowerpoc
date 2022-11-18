@@ -1,0 +1,15 @@
+{
+	"name": "Dataverse_Entity",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Dataverse_Linked_Service",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "CommonDataServiceForAppsEntity",
+		"schema": [],
+		"typeProperties": {
+			"entityName": "craf2_oct_intel_model"
+		}
+	}
+}
