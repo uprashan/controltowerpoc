@@ -32,7 +32,7 @@
 					"enableStaging": false,
 					"enableSkipIncompatibleRow": false,
 					"translator": {
-						"value": "@json{\\\"type\\\":\\\"ColumnTranslator\\\",\\\"mappings\\\":[{\\\"source\\\":{\\\"name\\\":\\\"craf2_idmipo\\\"},\\\"sink\\\":{\\\"name\\\":\\\"IDMI PO\\\"}}].json_output}",
+						"value": "@json('{\\\"type\\\":\\\"ColumnTranslator\\\",\\\"mappings\\\":[{\\\"source\\\":{\\\"name\\\":\\\"craf2_idmipo\\\"},\\\"sink\\\":{\\\"name\\\":\\\"IDMI PO\\\"}}].json_output}')",
 						"type": "Expression"
 					}
 				},
