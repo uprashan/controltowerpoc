@@ -1,0 +1,21 @@
+{
+	"name": "Blob_Storage_DS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureControlTowerFiles",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
