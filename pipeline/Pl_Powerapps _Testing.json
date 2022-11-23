@@ -13,16 +13,7 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [
-					{
-						"name": "Source",
-						"value": "craf2_oct_intel_model"
-					},
-					{
-						"name": "Destination",
-						"value": "oct_intel_model"
-					}
-				],
+				"userProperties": [],
 				"typeProperties": {
 					"source": {
 						"type": "CommonDataServiceForAppsSource"
@@ -35,11 +26,15 @@
 						"formatSettings": {
 							"type": "DelimitedTextWriteSettings",
 							"quoteAllText": true,
-							"fileExtension": ".csv"
+							"fileExtension": ".txt"
 						}
 					},
 					"enableStaging": false,
-					"enableSkipIncompatibleRow": false
+					"enableSkipIncompatibleRow": false,
+					"translator": {
+						"value": "@json{\\\"type\\\":\\\"ColumnTranslator\\\",\\\"mappings\\\":[{\\\"source\\\":{\\\"name\\\":\\\"craf2_idmipo\\\"},\\\"sink\\\":{\\\"name\\\":\\\"IDMI PO\\\"}}].json_output}",
+						"type": "Expression"
+					}
 				},
 				"inputs": [
 					{
@@ -49,7 +44,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "Blob_Storage_DS",
+						"referenceName": "DS_blobstorage",
 						"type": "DatasetReference"
 					}
 				]
