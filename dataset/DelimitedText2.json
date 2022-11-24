@@ -1,0 +1,400 @@
+{
+	"name": "DelimitedText2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureControlTowerFiles",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Dataverse.csv",
+				"container": "fabrinetpowerappsdataverse"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "craf2_addressforcomponentsupplier",
+				"type": "String"
+			},
+			{
+				"name": "craf2_addressfordisti",
+				"type": "String"
+			},
+			{
+				"name": "craf2_addressfordisti1",
+				"type": "String"
+			},
+			{
+				"name": "craf2_addressfordisti1name",
+				"type": "String"
+			},
+			{
+				"name": "craf2_businessunitid",
+				"type": "String"
+			},
+			{
+				"name": "craf2_canceldate",
+				"type": "String"
+			},
+			{
+				"name": "craf2_closeddate",
+				"type": "String"
+			},
+			{
+				"name": "craf2_componentsupplierid",
+				"type": "String"
+			},
+			{
+				"name": "craf2_componentsuppliername",
+				"type": "String"
+			},
+			{
+				"name": "craf2_componentunitpricing",
+				"type": "String"
+			},
+			{
+				"name": "craf2_criticalshortageflag",
+				"type": "String"
+			},
+			{
+				"name": "craf2_customorstandard",
+				"type": "String"
+			},
+			{
+				"name": "craf2_distiindicator",
+				"type": "String"
+			},
+			{
+				"name": "craf2_distributorid",
+				"type": "String"
+			},
+			{
+				"name": "craf2_distributorname",
+				"type": "String"
+			},
+			{
+				"name": "craf2_idmipo",
+				"type": "String"
+			},
+			{
+				"name": "craf2_intelpartnumber",
+				"type": "String"
+			},
+			{
+				"name": "craf2_intelpartnumberidentifier",
+				"type": "String"
+			},
+			{
+				"name": "craf2_ipndescription",
+				"type": "String"
+			},
+			{
+				"name": "craf2_manufacturerid",
+				"type": "String"
+			},
+			{
+				"name": "craf2_manufacturername",
+				"type": "String"
+			},
+			{
+				"name": "craf2_manufacturingpartnumber",
+				"type": "String"
+			},
+			{
+				"name": "craf2_name",
+				"type": "String"
+			},
+			{
+				"name": "craf2_ncnr",
+				"type": "String"
+			},
+			{
+				"name": "craf2_oct_intel_modelid",
+				"type": "String"
+			},
+			{
+				"name": "craf2_odmpartnumber",
+				"type": "String"
+			},
+			{
+				"name": "craf2_ordershipfromlocation",
+				"type": "String"
+			},
+			{
+				"name": "craf2_pocommitdate",
+				"type": "String"
+			},
+			{
+				"name": "craf2_pocommitquantity",
+				"type": "String"
+			},
+			{
+				"name": "craf2_pocreationdate",
+				"type": "String"
+			},
+			{
+				"name": "craf2_polineitem",
+				"type": "String"
+			},
+			{
+				"name": "craf2_ponumber",
+				"type": "String"
+			},
+			{
+				"name": "craf2_porequestdate",
+				"type": "String"
+			},
+			{
+				"name": "craf2_porequestquantity",
+				"type": "String"
+			},
+			{
+				"name": "craf2_poschedulelineitem",
+				"type": "String"
+			},
+			{
+				"name": "craf2_postprocessing_lead_time",
+				"type": "String"
+			},
+			{
+				"name": "craf2_postprocessingleadtime",
+				"type": "String"
+			},
+			{
+				"name": "craf2_potype",
+				"type": "String"
+			},
+			{
+				"name": "craf2_ptp",
+				"type": "String"
+			},
+			{
+				"name": "craf2_receiptnumber",
+				"type": "String"
+			},
+			{
+				"name": "craf2_releasenumber",
+				"type": "String"
+			},
+			{
+				"name": "craf2_remainingopenpoquantity",
+				"type": "String"
+			},
+			{
+				"name": "craf2_reportdate",
+				"type": "String"
+			},
+			{
+				"name": "craf2_shipmentreceiptdate",
+				"type": "String"
+			},
+			{
+				"name": "craf2_shipmentreceiptquantity",
+				"type": "String"
+			},
+			{
+				"name": "craf2_subconid",
+				"type": "String"
+			},
+			{
+				"name": "craf2_subconsite",
+				"type": "String"
+			},
+			{
+				"name": "craf2_supplierallocation",
+				"type": "String"
+			},
+			{
+				"name": "craf2_suppliermoq",
+				"type": "String"
+			},
+			{
+				"name": "craf2_targetleadtime",
+				"type": "String"
+			},
+			{
+				"name": "craf2_tier2intelpartnumberidentifier",
+				"type": "String"
+			},
+			{
+				"name": "craf2_tier2pocommitdateeta",
+				"type": "String"
+			},
+			{
+				"name": "craf2_tier2pocommitdateetd",
+				"type": "String"
+			},
+			{
+				"name": "craf2_tier2pocreationdate",
+				"type": "String"
+			},
+			{
+				"name": "craf2_tier2polineitem",
+				"type": "String"
+			},
+			{
+				"name": "craf2_tier2ponumber",
+				"type": "String"
+			},
+			{
+				"name": "craf2_tier2porequestdaterdd",
+				"type": "String"
+			},
+			{
+				"name": "craf2_tier2porequestquantity",
+				"type": "String"
+			},
+			{
+				"name": "craf2_tier2poschedulelineitem",
+				"type": "String"
+			},
+			{
+				"name": "craf2_tier2salesorderlineitem",
+				"type": "String"
+			},
+			{
+				"name": "craf2_tier2salesorderno",
+				"type": "String"
+			},
+			{
+				"name": "craf2_tier2salesorderquantity",
+				"type": "String"
+			},
+			{
+				"name": "craf2_tier2shipmentreceiptdategr",
+				"type": "String"
+			},
+			{
+				"name": "craf2_tier2shipmentreceiptquantity",
+				"type": "String"
+			},
+			{
+				"name": "craf2_tier2targetleadtimeday",
+				"type": "String"
+			},
+			{
+				"name": "craf2_transitleadtime",
+				"type": "String"
+			},
+			{
+				"name": "createdby",
+				"type": "String"
+			},
+			{
+				"name": "createdbyname",
+				"type": "String"
+			},
+			{
+				"name": "createdbyyominame",
+				"type": "String"
+			},
+			{
+				"name": "createdon",
+				"type": "String"
+			},
+			{
+				"name": "createdonbehalfby",
+				"type": "String"
+			},
+			{
+				"name": "createdonbehalfbyname",
+				"type": "String"
+			},
+			{
+				"name": "createdonbehalfbyyominame",
+				"type": "String"
+			},
+			{
+				"name": "importsequencenumber",
+				"type": "String"
+			},
+			{
+				"name": "modifiedby",
+				"type": "String"
+			},
+			{
+				"name": "modifiedbyname",
+				"type": "String"
+			},
+			{
+				"name": "modifiedbyyominame",
+				"type": "String"
+			},
+			{
+				"name": "modifiedon",
+				"type": "String"
+			},
+			{
+				"name": "modifiedonbehalfby",
+				"type": "String"
+			},
+			{
+				"name": "modifiedonbehalfbyname",
+				"type": "String"
+			},
+			{
+				"name": "modifiedonbehalfbyyominame",
+				"type": "String"
+			},
+			{
+				"name": "overriddencreatedon",
+				"type": "String"
+			},
+			{
+				"name": "ownerid",
+				"type": "String"
+			},
+			{
+				"name": "owneridname",
+				"type": "String"
+			},
+			{
+				"name": "owneridtype",
+				"type": "String"
+			},
+			{
+				"name": "owneridyominame",
+				"type": "String"
+			},
+			{
+				"name": "owningbusinessunit",
+				"type": "String"
+			},
+			{
+				"name": "owningteam",
+				"type": "String"
+			},
+			{
+				"name": "owninguser",
+				"type": "String"
+			},
+			{
+				"name": "statecode",
+				"type": "String"
+			},
+			{
+				"name": "statuscode",
+				"type": "String"
+			},
+			{
+				"name": "timezoneruleversionnumber",
+				"type": "String"
+			},
+			{
+				"name": "utcconversiontimezonecode",
+				"type": "String"
+			},
+			{
+				"name": "versionnumber",
+				"type": "String"
+			}
+		]
+	}
+}
