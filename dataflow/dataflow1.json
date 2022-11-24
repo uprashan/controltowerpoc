@@ -120,7 +120,7 @@
 				"     ignoreNoFilesFound: false) ~> source1",
 				"source1 select(mapColumn(",
 				"          each(match(type == 'string'),",
-				"               ltrim($$, 'craf2_') = $$)",
+				"               right($$, length($$)-6) = $$)",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> select1"
