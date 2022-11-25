@@ -139,7 +139,7 @@
 				"     skipDuplicateMapOutputs: true) ~> Select",
 				"Select sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     partitionFileNames:['24-11-2022.csv'],",
+				"     partitionFileNames:['Intel Model.csv'],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
 				"     partitionBy('hash', 1)) ~> blobstoragesink"
