@@ -139,8 +139,10 @@
 				"     skipDuplicateMapOutputs: true) ~> Select",
 				"Select sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     partitionFileNames:['24-11-2022.csv'],",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> blobstoragesink"
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> blobstoragesink"
 			]
 		}
 	}
