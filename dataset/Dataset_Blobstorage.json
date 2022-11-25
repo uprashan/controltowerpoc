@@ -1,0 +1,23 @@
+{
+	"name": "Dataset_Blobstorage",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureControlTowerFiles",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "25-11-2022.csv",
+				"container": "fabrinetpowerappsdataverse"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}

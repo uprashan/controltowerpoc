@@ -1,5 +1,5 @@
 {
-	"name": "dataflow1",
+	"name": "df_dataverse_to_blob storage",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
@@ -9,13 +9,26 @@
 						"referenceName": "DelimitedText2",
 						"type": "DatasetReference"
 					},
-					"name": "source1"
+					"name": "dataversesource",
+					"description": "Import data from blob storage"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "Dataset_Blobstorage",
+						"type": "DatasetReference"
+					},
+					"name": "blobstoragesink",
+					"rejectedDataLinkedService": {
+						"referenceName": "AzureControlTowerFiles",
+						"type": "LinkedServiceReference"
+					}
+				}
+			],
 			"transformations": [
 				{
-					"name": "select1"
+					"name": "Select"
 				}
 			],
 			"scriptLines": [
@@ -117,13 +130,17 @@
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> source1",
-				"source1 select(mapColumn(",
-				"          each(match(type == 'string'),",
-				"               right($$, length($$)-6) = $$)",
+				"     ignoreNoFilesFound: false) ~> dataversesource",
+				"dataversesource select(mapColumn(",
+				"          each(match(type=='string'),",
+				"               right($$,length($$)-6) = $$)",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> select1"
+				"     skipDuplicateMapOutputs: true) ~> Select",
+				"Select sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> blobstoragesink"
 			]
 		}
 	}
