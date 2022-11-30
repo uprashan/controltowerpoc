@@ -6,7 +6,7 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "DelimitedText2",
+						"referenceName": "fabrinetpowerappsdataverse_dataset",
 						"type": "DatasetReference"
 					},
 					"name": "dataversesource",

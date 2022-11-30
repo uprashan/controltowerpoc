@@ -1,5 +1,5 @@
 {
-	"name": "DelimitedText2",
+	"name": "fabrinetpowerappsdataverse_dataset",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureControlTowerFiles",
